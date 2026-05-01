@@ -7,20 +7,31 @@ import { useState } from "react";
 import { toast } from "sonner";
 
 const contactInfo = [
-  { icon: Phone, label: "Teléfonos", value: `${COMPANY.phone} / ${COMPANY.phone2}`, href: `tel:${COMPANY.phone.replace(/\s/g, "")}` },
+  { icon: Phone, label: "Teléfono", value: COMPANY.phone, href: `tel:${COMPANY.phone.replace(/\s/g, "")}` },
   { icon: Mail, label: "Correo", value: COMPANY.email, href: `mailto:${COMPANY.email}` },
-  { icon: MapPin, label: "Dirección", value: `${COMPANY.address} — ${COMPANY.city}`, href: "#" },
-  { icon: Clock, label: "Horario", value: "Lun-Vie: 8AM-5PM | Sáb: 8AM-12PM", href: "#" },
+  { icon: MapPin, label: "Dirección", value: `${COMPANY.address}, ${COMPANY.city}`, href: "#" },
+  { icon: Clock, label: "Horario de atención comercial", value: "Lun-Vie: 8:00 AM - 5:00 PM | Sáb: 8:00 AM - 12:00 PM", href: "#" },
+];
+
+const CLIENT_TYPES = [
+  "Tienda de Repuestos",
+  "Distribuidora de repuestos",
+  "Comerciante Individual",
+  "Colaborador de la empresa",
+  "Taller mecánico",
 ];
 
 export default function ContactSection() {
   const { ref, isInView } = useInView();
-  const [formData, setFormData] = useState({ name: "", company: "", phone: "", email: "", message: "" });
+  const [formData, setFormData] = useState({ name: "", company: "", clientType: "", phone: "", email: "", message: "" });
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    const msg = encodeURIComponent(`Hola, soy ${formData.name} de ${formData.company}.\n\n${formData.message}\n\nTeléfono: ${formData.phone}\nEmail: ${formData.email}`);
-    window.open(`https://wa.me/50499900823?text=${msg}`, "_blank");
+    const msg = encodeURIComponent(
+      `Hola, soy ${formData.name} de ${formData.company}.\nTipo de cliente: ${formData.clientType}\n\n${formData.message}\n\nTeléfono: ${formData.phone}\nEmail: ${formData.email}`
+    );
+    const waNumber = COMPANY.whatsapp.replace(/\D/g, "");
+    window.open(`https://wa.me/${waNumber}?text=${msg}`, "_blank");
     toast.success("Redirigiendo a WhatsApp para completar su solicitud.");
   };
 
@@ -34,7 +45,7 @@ export default function ContactSection() {
           <h2 className="font-display font-black text-4xl md:text-5xl text-[#1B3A6B] mt-4 mb-4">
             Hablemos de su <span className="text-gradient-red">Negocio</span>
           </h2>
-          <p className="text-[#1B3A6B]/55 max-w-2xl mx-auto">Estamos listos para atenderle. Solicite una cotización o agende una visita de nuestro equipo de asesores.</p>
+          <p className="text-[#1B3A6B]/55 max-w-2xl mx-auto">Atención exclusiva para clientes mayoristas. Solicite una cotización o agende una visita con uno de nuestros asesores comerciales.</p>
         </motion.div>
 
         <div className="grid lg:grid-cols-5 gap-8">
@@ -59,8 +70,8 @@ export default function ContactSection() {
           {/* Form */}
           <motion.div initial={{ opacity: 0, x: 30 }} animate={isInView ? { opacity: 1, x: 0 } : {}} transition={{ duration: 0.7, delay: 0.2 }} className="lg:col-span-3">
             <form onSubmit={handleSubmit} className="bg-white border border-[#1B3A6B]/8 shadow-sm p-8 rounded-sm space-y-5">
-              <h3 className="font-display font-bold text-xl text-[#1B3A6B] uppercase tracking-wider mb-1">Solicitar Cotización</h3>
-              <p className="text-[#1B3A6B]/45 text-sm mb-6">Complete el formulario y nos pondremos en contacto a la brevedad.</p>
+              <h3 className="font-display font-bold text-xl text-[#1B3A6B] uppercase tracking-wider mb-1">Solicitar cotización mayorista</h3>
+              <p className="text-[#1B3A6B]/45 text-sm mb-6">Complete el formulario y uno de nuestros asesores comerciales se pondrá en contacto con usted.</p>
               <div className="grid sm:grid-cols-2 gap-5">
                 <div>
                   <label className="text-[#1B3A6B]/55 text-xs font-display font-semibold uppercase tracking-wider mb-2 block">Nombre Completo *</label>
@@ -69,6 +80,20 @@ export default function ContactSection() {
                 <div>
                   <label className="text-[#1B3A6B]/55 text-xs font-display font-semibold uppercase tracking-wider mb-2 block">Empresa *</label>
                   <input type="text" required value={formData.company} onChange={(e) => setFormData({ ...formData, company: e.target.value })} className={inputClass} placeholder="Nombre de su empresa" />
+                </div>
+                <div className="sm:col-span-2">
+                  <label className="text-[#1B3A6B]/55 text-xs font-display font-semibold uppercase tracking-wider mb-2 block">Tipo de cliente *</label>
+                  <select
+                    required
+                    value={formData.clientType}
+                    onChange={(e) => setFormData({ ...formData, clientType: e.target.value })}
+                    className={inputClass}
+                  >
+                    <option value="" disabled>Seleccione una opción</option>
+                    {CLIENT_TYPES.map((type) => (
+                      <option key={type} value={type}>{type}</option>
+                    ))}
+                  </select>
                 </div>
                 <div>
                   <label className="text-[#1B3A6B]/55 text-xs font-display font-semibold uppercase tracking-wider mb-2 block">Teléfono *</label>
@@ -81,10 +106,10 @@ export default function ContactSection() {
               </div>
               <div>
                 <label className="text-[#1B3A6B]/55 text-xs font-display font-semibold uppercase tracking-wider mb-2 block">Mensaje / Productos *</label>
-                <textarea required rows={4} value={formData.message} onChange={(e) => setFormData({ ...formData, message: e.target.value })} className={`${inputClass} resize-none`} placeholder="Describa los productos que necesita o su consulta..." />
+                <textarea required rows={4} value={formData.message} onChange={(e) => setFormData({ ...formData, message: e.target.value })} className={`${inputClass} resize-none`} placeholder="Describa los productos que necesita o el tipo de negocio al que pertenece." />
               </div>
               <button type="submit" className="btn-brand w-full py-4 rounded-sm font-display text-sm flex items-center justify-center gap-3">
-                <Send className="w-4 h-4" /> ENVIAR SOLICITUD POR WHATSAPP
+                <Send className="w-4 h-4" /> ENVIAR SOLICITUD DE COTIZACIÓN
               </button>
               <p className="text-[#1B3A6B]/30 text-xs text-center">Al enviar, será redirigido a WhatsApp con su mensaje pre-cargado.</p>
             </form>

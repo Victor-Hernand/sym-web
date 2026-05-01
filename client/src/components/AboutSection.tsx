@@ -18,6 +18,9 @@ export default function AboutSection() {
               <img src={IMAGES.realEquipoCompleto} alt="Equipo Inversiones S&M" className="w-full aspect-[4/3] object-cover rounded-sm" />
               <div className="absolute inset-0 bg-gradient-to-t from-light-bg/60 via-transparent to-transparent rounded-sm" />
             </div>
+            <p className="text-[#1B3A6B]/65 text-sm mt-4 font-display italic text-center">
+              Equipo comercial y logístico especializado en atención B2B
+            </p>
             <div className="absolute -bottom-6 -right-6 glass-blue p-6 rounded-sm">
               <div className="blue-gradient font-display font-black text-5xl leading-none">30+</div>
               <div className="text-[#1B3A6B]/55 font-display font-semibold text-sm uppercase tracking-wider mt-1">Años de Experiencia</div>
@@ -28,10 +31,10 @@ export default function AboutSection() {
           <motion.div initial={{ opacity: 0, x: 40 }} animate={isInView ? { opacity: 1, x: 0 } : {}} transition={{ duration: 0.8, delay: 0.2 }}>
             <span className="section-label">Quiénes Somos</span>
             <h2 className="font-display font-black text-4xl md:text-5xl text-[#1B3A6B] mt-4 mb-6 leading-tight">
-              Su Socio Estratégico en <span className="blue-gradient">Autopartes</span>
+              Importadores y distribuidores <span className="blue-gradient">mayoristas de autopartes</span>
             </h2>
             <p className="text-[#1B3A6B]/60 leading-relaxed mb-8">
-              Inversiones S&M es una empresa hondureña dedicada a la importación y distribución mayorista de autopartes. Con más de tres décadas en el mercado, nos hemos consolidado como líderes en el sector B2B, sirviendo a talleres, distribuidores y flotillas en todo el territorio nacional.
+              Inversiones S&M es una empresa hondureña especializada en la importación y distribución mayorista de autopartes, orientada exclusivamente al mercado B2B.
             </p>
 
             <div className="grid sm:grid-cols-2 gap-4 mb-8">
@@ -40,7 +43,7 @@ export default function AboutSection() {
                   <Target className="w-4 h-4" /> Misión
                 </h4>
                 <p className="text-[#1B3A6B]/55 text-sm leading-relaxed">
-                  Proveer autopartes de alta calidad con un servicio ágil y personalizado, generando valor para nuestros clientes y colaboradores.
+                  Abastecer distribuidoras automotrices con autopartes confiables, precios competitivos y un servicio ágil que garantice continuidad y rentabilidad en tu negocio.
                 </p>
               </div>
               <div className="bg-white border border-[#1B3A6B]/8 shadow-sm p-5 rounded-sm card-shine">
@@ -48,7 +51,7 @@ export default function AboutSection() {
                   <Eye className="w-4 h-4" /> Visión
                 </h4>
                 <p className="text-[#1B3A6B]/55 text-sm leading-relaxed">
-                  Ser la distribuidora de autopartes más confiable y eficiente de Honduras, reconocida por nuestra excelencia y compromiso.
+                  Consolidarnos como la distribuidora mayorista de autopartes líder en Honduras, reconocida por su eficiencia logística, disponibilidad de inventario y relaciones comerciales duraderas con nuestros clientes B2B.
                 </p>
               </div>
             </div>

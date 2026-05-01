@@ -9,14 +9,13 @@ export const COMPANY = {
   legalName: "Inversiones Castro S de R L",
   rtn: "08019019103201",
   slogan: "Ganando Tú, Ganamos Nosotros",
-  tagline: "Importadora y Distribuidora de Autopartes B2B",
-  phone: "+504 9990-0823",
-  phone2: "+504 9615-0472",
-  email: "administracion@inversionessymhn.com",
-  address: "Anillo Periférico, calle principal entrada a la Residencial Honduras, esquina opuesta al puente peatonal.",
+  tagline: "Distribución mayorista de autopartes en Honduras. Precios mayoristas y asesoría especializada para distribuidores.",
+  phone: "+504 9452-5175",
+  email: "inversionescastro19@gmail.com",
+  address: "Boulevard Comunidad Económica Europea, frente a Plaza Aire Frío",
   city: "Tegucigalpa, Honduras",
   schedule: "Lunes a Viernes: 8:00 AM - 5:00 PM | Sábados: 8:00 AM - 12:00 PM",
-  whatsapp: "https://wa.me/50499900823",
+  whatsapp: "https://wa.me/50494525175",
   website: "https://inversionessymhn.com",
   facebook: "https://www.facebook.com/InversionesSyM",
   instagram: "https://www.instagram.com/inversionessym/",
@@ -78,16 +77,16 @@ export const VALUES = [
 ];
 
 export const STATS = [
-  { value: 30, suffix: "+", label: "Años de Experiencia" },
-  { value: 31, suffix: "+", label: "Marcas Distribuidas" },
-  { value: 10, suffix: "", label: "Categorías de Productos" },
+  { value: 30, suffix: "+", label: "Años abasteciendo negocios automotrices" },
+  { value: 31, suffix: "+", label: "Marcas con disponibilidad constante" },
+  { value: 10, suffix: "", label: "Categorías de alta rotación" },
   { value: 100, suffix: "%", label: "Cobertura Nacional" },
 ];
 
 export const NAV_ITEMS = [
   { label: "Inicio", href: "#inicio" },
   { label: "Nosotros", href: "#nosotros" },
-  { label: "Productos", href: "#productos" },
+  { label: "Categorías", href: "#productos" },
   { label: "Marcas", href: "#marcas" },
   { label: "Proceso B2B", href: "#proceso" },
   { label: "Contacto", href: "#contacto" },
@@ -114,7 +113,7 @@ export const COVERAGE_ZONES = [
 ];
 
 export const FEATURED_PRODUCTS = [
-  { name: "Amortiguadores WELMET", tag: "Más Vendido", description: "Tecnología japonesa para máximo rendimiento y durabilidad en todo tipo de terreno.", image: IMAGES.autopartsDisplay },
-  { name: "Discos de Freno R-TECH", tag: "Premium", description: "Discos ventilados de alta resistencia con tratamiento anticorrosivo certificado.", image: IMAGES.realBodegueroEmpaque },
-  { name: "Filtros SYNTECFIL", tag: "Exclusivo", description: "Filtración superior para motor, aceite y cabina. Compatibilidad universal.", image: IMAGES.realBodegueroEscalera },
+  { name: "Amortiguadores WELMET", tag: "Más Vendido", description: "Diseñados para alta durabilidad y desempeño, ideales para distribuidoras que buscan productos de alta rotación y bajo reclamo.", image: IMAGES.autopartsDisplay },
+  { name: "Discos de Freno R-TECH", tag: "Alta durabilidad", description: "Discos ventilados de alta resistencia con tratamiento anticorrosivo certificado.", image: IMAGES.realBodegueroEmpaque },
+  { name: "Filtros SYNTECFIL", tag: "Marca destacada", description: "Filtración superior para motor, aceite y cabina. Compatibilidad universal.", image: IMAGES.realBodegueroEscalera },
 ];

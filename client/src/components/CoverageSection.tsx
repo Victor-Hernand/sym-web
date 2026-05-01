@@ -5,10 +5,10 @@ import { motion } from "framer-motion";
 import { Truck, Clock, MapPin, CreditCard } from "lucide-react";
 
 const features = [
-  { icon: Truck, title: "Entrega al Día Siguiente", description: "Tu pedido preparado y enviado para que lo recibas al día siguiente." },
-  { icon: MapPin, title: "Cobertura Nacional", description: "Asesores en todo el país que visitan tu empresa directamente." },
-  { icon: Clock, title: "Logística Ágil", description: "Diseñada para apoyarte en tu operación diaria sin interrupciones." },
-  { icon: CreditCard, title: "Crédito Flexible", description: "Líneas de crédito con condiciones que se adaptan a tu negocio." },
+  { icon: Truck, title: "Entrega al Día Siguiente", description: "Pedidos preparados y despachados con rapidez para que tu negocio no se detenga." },
+  { icon: MapPin, title: "Cobertura Nacional", description: "Atendemos clientes en todo Honduras mediante distribución directa y asesoría comercial." },
+  { icon: Clock, title: "Logística Ágil", description: "Procesos logísticos optimizados para garantizar entregas puntuales y continuidad operativa." },
+  { icon: CreditCard, title: "Crédito Flexible", description: "Opciones de crédito adaptadas a tu volumen de compra y relación comercial." },
 ];
 
 export default function CoverageSection() {
@@ -25,7 +25,7 @@ export default function CoverageSection() {
             <motion.div initial={{ opacity: 0, y: 30 }} animate={isInView ? { opacity: 1, y: 0 } : {}} transition={{ duration: 0.7 }}>
               <span className="section-label">Logística & Cobertura</span>
               <h2 className="font-display font-black text-4xl md:text-5xl text-white mt-4 leading-tight">
-                Llegamos a Todo <span className="blue-gradient">Honduras</span>
+                Cobertura a nivel <span className="blue-gradient">nacional</span>
               </h2>
             </motion.div>
 

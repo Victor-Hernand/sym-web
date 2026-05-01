@@ -15,11 +15,11 @@ export default function ProductsSection() {
     <section id="productos" className="py-24 md:py-32 bg-light-bg relative noise-overlay" ref={ref}>
       <div className="container relative z-10">
         <motion.div initial={{ opacity: 0, y: 20 }} animate={isInView ? { opacity: 1, y: 0 } : {}} transition={{ duration: 0.6 }} className="text-center mb-16">
-          <span className="section-label justify-center">Nuestro Catálogo</span>
+          <span className="section-label justify-center">Nuestro Catálogo B2B</span>
           <h2 className="font-display font-black text-4xl md:text-5xl text-[#1B3A6B] mt-4 mb-4">
-            Categorías de <span className="blue-gradient">Autopartes</span>
+            Categorías de autopartes para tu <span className="blue-gradient">negocio mayorista</span>
           </h2>
-          <p className="text-[#1B3A6B]/55 max-w-2xl mx-auto">Más de 10 categorías con las mejores marcas del mercado, siempre disponibles en bodega para entrega inmediata.</p>
+          <p className="text-[#1B3A6B]/55 max-w-2xl mx-auto">Más de 10 categorías con stock continuo y marcas líderes para entrega inmediata.</p>
         </motion.div>
 
         {/* Category Tabs */}
@@ -56,7 +56,7 @@ export default function ProductsSection() {
               <span className="text-brand-blue-light text-xs font-display font-bold mt-1 inline-block">{CATEGORIES[activeTab].percentage}% disponibilidad</span>
             </div>
             <a href={COMPANY.whatsapp} target="_blank" rel="noopener noreferrer" className="btn-brand px-6 py-3 rounded-sm font-display text-sm shrink-0 flex items-center gap-2">
-              COTIZAR <ArrowRight className="w-4 h-4" />
+              SOLICITAR COTIZACIÓN MAYORISTA <ArrowRight className="w-4 h-4" />
             </a>
           </div>
         </motion.div>
@@ -64,7 +64,7 @@ export default function ProductsSection() {
         {/* Featured Products */}
         <motion.div initial={{ opacity: 0, y: 20 }} animate={isInView ? { opacity: 1, y: 0 } : {}} transition={{ duration: 0.6, delay: 0.3 }}>
           <h3 className="font-display font-black text-2xl md:text-3xl text-[#1B3A6B] text-center mb-10">
-            Productos <span className="blue-gradient">Estrella</span>
+            Líneas destacadas para tu <span className="blue-gradient">negocio automotriz</span>
           </h3>
           <div className="grid md:grid-cols-3 gap-6">
             {FEATURED_PRODUCTS.map((product, i) => (
@@ -73,7 +73,7 @@ export default function ProductsSection() {
                 initial={{ opacity: 0, y: 20 }}
                 animate={isInView ? { opacity: 1, y: 0 } : {}}
                 transition={{ delay: 0.4 + i * 0.15 }}
-                className="bg-white border border-[#1B3A6B]/8 shadow-sm rounded-sm overflow-hidden card-shine group hover:shadow-lg transition-shadow"
+                className="bg-white border border-[#1B3A6B]/8 shadow-sm rounded-sm overflow-hidden card-shine group hover:shadow-lg transition-shadow flex flex-col"
               >
                 <div className="relative h-48 overflow-hidden">
                   <img src={product.image} alt={product.name} className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" />
@@ -82,9 +82,17 @@ export default function ProductsSection() {
                     <Star className="w-3 h-3" /> {product.tag}
                   </span>
                 </div>
-                <div className="p-6">
+                <div className="p-6 flex-1 flex flex-col">
                   <h4 className="font-display font-bold text-lg text-[#1B3A6B] mb-2">{product.name}</h4>
-                  <p className="text-[#1B3A6B]/55 text-sm leading-relaxed">{product.description}</p>
+                  <p className="text-[#1B3A6B]/55 text-sm leading-relaxed mb-4 flex-1">{product.description}</p>
+                  <a
+                    href={`${COMPANY.whatsapp}?text=${encodeURIComponent(`Hola, me interesa cotizar: ${product.name}`)}`}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="btn-brand px-4 py-2.5 rounded-sm font-display text-xs inline-flex items-center justify-center gap-2 mt-auto"
+                  >
+                    SOLICITAR COTIZACIÓN <ArrowRight className="w-3.5 h-3.5" />
+                  </a>
                 </div>
               </motion.div>
             ))}
@@ -93,7 +101,7 @@ export default function ProductsSection() {
 
         <div className="text-center mt-12">
           <a href={COMPANY.whatsapp} target="_blank" rel="noopener noreferrer" className="btn-outline-brand px-10 py-4 rounded-sm font-display text-sm inline-flex items-center gap-3">
-            SOLICITAR CATÁLOGO COMPLETO <ArrowRight className="w-4 h-4" />
+            SOLICITAR CATÁLOGO MAYORISTA <ArrowRight className="w-4 h-4" />
           </a>
         </div>
       </div>

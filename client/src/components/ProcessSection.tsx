@@ -5,12 +5,12 @@ import { motion } from "framer-motion";
 import { Phone, ClipboardList, Package, Truck, CheckCircle, Handshake, ArrowRight } from "lucide-react";
 
 const steps = [
-  { icon: Phone, title: "Contacto Inicial", description: "Comunícate con nosotros vía WhatsApp, teléfono o correo electrónico.", image: IMAGES.realAsesorTelefono },
-  { icon: ClipboardList, title: "Asesoría Personalizada", description: "Nuestro equipo de asesores te guía para encontrar las piezas exactas.", image: IMAGES.realAsesorClipboard },
-  { icon: Handshake, title: "Cotización y Acuerdo", description: "Recibe una cotización competitiva con condiciones de pago flexibles.", image: IMAGES.realBodegueroEmpaque },
-  { icon: Package, title: "Preparación del Pedido", description: "Tu pedido se prepara con cuidado desde nuestra bodega central.", image: IMAGES.realBodegueroEscalera },
-  { icon: Truck, title: "Entrega Nacional", description: "Logística eficiente con entregas al día siguiente en todo Honduras.", image: IMAGES.realConductorCamion },
-  { icon: CheckCircle, title: "Seguimiento Post-Venta", description: "Garantía completa y soporte continuo para tu tranquilidad.", image: IMAGES.realEquipoCompleto },
+  { icon: Phone, title: "Contacto Inicial", description: "Contáctanos vía WhatsApp, teléfono o correo y uno de nuestros asesores B2B atenderá tu solicitud.", image: IMAGES.realAsesorTelefono },
+  { icon: ClipboardList, title: "Asesoría Personalizada", description: "Nuestros asesores analizan tus necesidades y te recomiendan productos adecuados para tu tipo de negocio y demanda.", image: IMAGES.realAsesorClipboard },
+  { icon: Handshake, title: "Cotización y Acuerdo", description: "Recibe una cotización clara y competitiva, con condiciones comerciales adaptadas a tu volumen y frecuencia de compra.", image: IMAGES.realBodegueroEmpaque },
+  { icon: Package, title: "Preparación del Pedido", description: "Cada pedido es verificado, preparado y controlado desde nuestra bodega central para garantizar exactitud y disponibilidad inmediata.", image: IMAGES.realBodegueroEscalera },
+  { icon: Truck, title: "Entrega Nacional", description: "Logística eficiente con entregas rápidas a nivel nacional, asegurando continuidad en la operación de tu negocio.", image: IMAGES.realConductorCamion },
+  { icon: CheckCircle, title: "Seguimiento Post-Venta", description: "Acompañamiento continuo, garantía en productos y soporte comercial.", image: IMAGES.realEquipoCompleto },
 ];
 
 export default function ProcessSection() {
@@ -22,9 +22,9 @@ export default function ProcessSection() {
         <motion.div initial={{ opacity: 0, y: 20 }} animate={isInView ? { opacity: 1, y: 0 } : {}} transition={{ duration: 0.6 }} className="text-center mb-16">
           <span className="section-label justify-center">Proceso B2B</span>
           <h2 className="font-display font-black text-4xl md:text-5xl text-[#1B3A6B] mt-4 mb-4">
-            Cómo <span className="blue-gradient">Trabajamos</span>
+            Cómo abastecemos tu <span className="blue-gradient">negocio automotriz</span>
           </h2>
-          <p className="text-[#1B3A6B]/55 max-w-2xl mx-auto">Un proceso diseñado para la eficiencia de su negocio, desde el primer contacto hasta la entrega en su puerta.</p>
+          <p className="text-[#1B3A6B]/55 max-w-2xl mx-auto">Un proceso B2B ágil que garantiza rapidez, control y cumplimiento en cada pedido.</p>
         </motion.div>
 
         {/* Steps Grid */}
@@ -60,7 +60,7 @@ export default function ProcessSection() {
         {/* CTA */}
         <div className="text-center mt-12">
           <a href={COMPANY.whatsapp} target="_blank" rel="noopener noreferrer" className="btn-brand px-10 py-4 rounded-sm font-display text-sm inline-flex items-center gap-3">
-            SOLICITAR VISITA DE ASESOR <ArrowRight className="w-4 h-4" />
+            SOLICITAR VISITA DE ASESOR COMERCIAL <ArrowRight className="w-4 h-4" />
           </a>
         </div>
       </div>

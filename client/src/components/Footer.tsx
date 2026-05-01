@@ -29,9 +29,8 @@ export default function Footer() {
             <h4 className="font-display font-bold text-sm uppercase tracking-wider text-brand-blue-glow mb-6">Contacto</h4>
             <ul className="space-y-3">
               <li><a href={`tel:${COMPANY.phone.replace(/\s/g, "")}`} className="flex items-center gap-2 text-white/50 text-sm hover:text-brand-blue-glow transition-colors"><Phone className="w-3.5 h-3.5 text-brand-blue-glow/60" /> {COMPANY.phone}</a></li>
-              <li><a href={`tel:${COMPANY.phone2.replace(/\s/g, "")}`} className="flex items-center gap-2 text-white/50 text-sm hover:text-brand-blue-glow transition-colors"><Phone className="w-3.5 h-3.5 text-brand-blue-glow/60" /> {COMPANY.phone2}</a></li>
               <li><a href={`mailto:${COMPANY.email}`} className="flex items-center gap-2 text-white/50 text-sm hover:text-brand-blue-glow transition-colors break-all"><Mail className="w-3.5 h-3.5 text-brand-blue-glow/60 shrink-0" /> {COMPANY.email}</a></li>
-              <li className="flex items-start gap-2 text-white/50 text-sm"><MapPin className="w-3.5 h-3.5 text-brand-blue-glow/60 shrink-0 mt-0.5" /> {COMPANY.address}</li>
+              <li className="flex items-start gap-2 text-white/50 text-sm"><MapPin className="w-3.5 h-3.5 text-brand-blue-glow/60 shrink-0 mt-0.5" /> {COMPANY.address}, {COMPANY.city}</li>
             </ul>
           </div>
           <div>
