@@ -192,6 +192,15 @@
     background-clip: text;
   }
 
+  /* === HERO BLUE GRADIENT (bright, contrasts on dark/navy bg) === */
+  .hero-blue-gradient {
+    background: linear-gradient(135deg, #7DD3FC, #38BDF8, #BAE6FD);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    text-shadow: 0 2px 20px rgba(56, 189, 248, 0.3);
+  }
+
   /* === BRAND LINE === */
   .brand-line {
     position: relative;

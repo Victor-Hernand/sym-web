@@ -28,16 +28,22 @@ export const IMAGES = {
   b2bHandshake: "https://private-us-east-1.manuscdn.com/sessionFile/hrBCERXMyxSLbEKebsZazj/sandbox/AhxSntWPaWTbIy9D7ggbVt-img-3_1771511421000_na1fn_YjJiLWhhbmRzaGFrZQ.png?x-oss-process=image/resize,w_1920,h_1920/format,webp/quality,q_80&Expires=1798761600&Policy=eyJTdGF0ZW1lbnQiOlt7IlJlc291cmNlIjoiaHR0cHM6Ly9wcml2YXRlLXVzLWVhc3QtMS5tYW51c2Nkbi5jb20vc2Vzc2lvbkZpbGUvaHJCQ0VSWE15eFNMYkVLZWJzWmF6ai9zYW5kYm94L0FoeFNudFdQYVdUYkl5OUQ3Z2diVnQtaW1nLTNfMTc3MTUxMTQyMTAwMF9uYTFmbl9ZakppTFdoaGJtUnphR0ZyWlEucG5nP3gtb3NzLXByb2Nlc3M9aW1hZ2UvcmVzaXplLHdfMTkyMCxoXzE5MjAvZm9ybWF0LHdlYnAvcXVhbGl0eSxxXzgwIiwiQ29uZGl0aW9uIjp7IkRhdGVMZXNzVGhhbiI6eyJBV1M6RXBvY2hUaW1lIjoxNzk4NzYxNjAwfX19XX0_&Key-Pair-Id=K2HSFNDJXOU9YS&Signature=guRAuGIk9xd-OfcMvSZvpZqav~7N0aavtd6DIdZkyZ~i1SoPfU7ByLQwxtoykziasezQoWkrZ~fID~jd3VeAMDnidmDKUv08Yromkhw3Pol4lEsF1wJEIa7dLszzHtHf6t-GOL1~an7Crk5rBmTUPROvKqbscaH5jZyy0~CSrmz0UM0dUy6eZPXjsePmP7G~~PNe5YqIko7wIPApU4G32WT4p8Vm02YGRj~gKzJIydi7KxQ9sA1u26dlpOvX3H1YNh6yFx9yqpLfC7uXBH~ftDh7Q1VgtunIQxWLerNPya0lLbklRoP8TjPCYOQXhTrotOEpHwh9RwuzehZIDQLReg__",
   deliveryTruck: "https://private-us-east-1.manuscdn.com/sessionFile/hrBCERXMyxSLbEKebsZazj/sandbox/AhxSntWPaWTbIy9D7ggbVt-img-4_1771511422000_na1fn_ZGVsaXZlcnktdHJ1Y2s.png?x-oss-process=image/resize,w_1920,h_1920/format,webp/quality,q_80&Expires=1798761600&Policy=eyJTdGF0ZW1lbnQiOlt7IlJlc291cmNlIjoiaHR0cHM6Ly9wcml2YXRlLXVzLWVhc3QtMS5tYW51c2Nkbi5jb20vc2Vzc2lvbkZpbGUvaHJCQ0VSWE15eFNMYkVLZWJzWmF6ai9zYW5kYm94L0FoeFNudFdQYVdUYkl5OUQ3Z2diVnQtaW1nLTRfMTc3MTUxMTQyMjAwMF9uYTFmbl9aR1ZzYVhabGNua3RkSEoxWTJzLnBuZz94LW9zcy1wcm9jZXNzPWltYWdlL3Jlc2l6ZSx3XzE5MjAsaF8xOTIwL2Zvcm1hdCx3ZWJwL3F1YWxpdHkscV84MCIsIkNvbmRpdGlvbiI6eyJEYXRlTGVzc1RoYW4iOnsiQVdTOkVwb2NoVGltZSI6MTc5ODc2MTYwMH19fV19&Key-Pair-Id=K2HSFNDJXOU9YS&Signature=KcLiIuxIDM6CIL-k9p21hAtNFIdF8hYZEXyv0yXx2eHw297Uy5dM9oKU3sCwPC2Ynr5k~10hQu4pgmby2LB~oU3DX8Ug3a5uM5dPFR4~edTH5I8UvUGBIk9~mQEuynRWcGnntF-FjLdYr-Y~14wz-4zBiAydXideE-iUCe6ODAWgUEZP4k4n-I~ertLVwrNK0eyOCkFNgvNE1L-vUAyEZvoCqHBx1dmdlzvVUwsHB1HHnTYUSKpdoj3UJTVuyo35u0w93clZHyxIEhpbBzPjbl3rmxWscXlWJuUbzfgXFh4RRucYsYzmYXNCm5bbzJEGSTBY5RcBhMs8XbzPk0K-vw__",
   teamAdvisor: "https://private-us-east-1.manuscdn.com/sessionFile/hrBCERXMyxSLbEKebsZazj/sandbox/AhxSntWPaWTbIy9D7ggbVt-img-5_1771511408000_na1fn_dGVhbS1hZHZpc29y.png?x-oss-process=image/resize,w_1920,h_1920/format,webp/quality,q_80&Expires=1798761600&Policy=eyJTdGF0ZW1lbnQiOlt7IlJlc291cmNlIjoiaHR0cHM6Ly9wcml2YXRlLXVzLWVhc3QtMS5tYW51c2Nkbi5jb20vc2Vzc2lvbkZpbGUvaHJCQ0VSWE15eFNMYkVLZWJzWmF6ai9zYW5kYm94L0FoeFNudFdQYVdUYkl5OUQ3Z2diVnQtaW1nLTVfMTc3MTUxMTQwODAwMF9uYTFmbl9kR1ZoYlMxaFpIWnBjMjl5LnBuZz94LW9zcy1wcm9jZXNzPWltYWdlL3Jlc2l6ZSx3XzE5MjAsaF8xOTIwL2Zvcm1hdCx3ZWJwL3F1YWxpdHkscV84MCIsIkNvbmRpdGlvbiI6eyJEYXRlTGVzc1RoYW4iOnsiQVdTOkVwb2NoVGltZSI6MTc5ODc2MTYwMH19fV19&Key-Pair-Id=K2HSFNDJXOU9YS&Signature=iVUyzrZyzh8ReGt1gvrthA4j9iG43SkqsnHliGrN4miS8ULs3pg23Ds~PdV4uEN~fbD7HHHlYnmxNN1zBvh4mgJwbbK8mKrnhlwcUx5QY39~eMvvq28eogIP6LZQSfM9pc4BYYhTjjxc-bz1HCjZx9pkGSX0UMbCIWojpZ4qDEtV2ybiNCK-SQiQGMNfRCsZ6V2a~-VLBpmDaq42EeINOilfPSEcLOydka5hodTEb~d673jagQ1kqHVWjLhuB-1FVCQl4bsomsjyIXoSm8ZsuG6o2cRgBn~T~kjLjcIjhlU8M22RQSEq1~ZsU7TQlDWFkJI6-X1dGjt1WAG5qOB2MQ__",
-  // Real photos from the company
-  realAsesorTelefono: "https://files.manuscdn.com/user_upload_by_module/session_file/310519663191878787/GGNibCfcHqwmaVBx.jpeg",
-  realOperarioCarga: "https://files.manuscdn.com/user_upload_by_module/session_file/310519663191878787/TUdEfNkubuwRCSLl.jpeg",
-  realConductorCamion: "https://files.manuscdn.com/user_upload_by_module/session_file/310519663191878787/deIAAVnkCHaHFJKq.jpeg",
-  realBodegueroEmpaque: "https://files.manuscdn.com/user_upload_by_module/session_file/310519663191878787/uofgoLEVyvWxTGcx.jpeg",
-  realBodegueroEscalera: "https://files.manuscdn.com/user_upload_by_module/session_file/310519663191878787/tgLawKLMHmjFMJYe.jpeg",
-  realOperarioMarcas: "https://files.manuscdn.com/user_upload_by_module/session_file/310519663191878787/AeKYlIjTmJfMAbyz.jpeg",
-  realAsesorClipboard: "https://files.manuscdn.com/user_upload_by_module/session_file/310519663191878787/TxTkGUZkulDJxqhQ.jpeg",
-  realEquipoCompleto: "https://files.manuscdn.com/user_upload_by_module/session_file/310519663191878787/WOlWBCeeHtwCpTYy.jpeg",
-  realBodegaLlena: "https://files.manuscdn.com/user_upload_by_module/session_file/310519663191878787/FvqbjXPAwWiIfnRq.jpeg",
+  // Real photos from the company (local assets)
+  realAsesorTelefono: "/images/asesor-oficina.jpg",
+  realOperarioCarga: "/images/operario-carretilla.jpg",
+  realConductorCamion: "/images/bodega-camiones.jpg",
+  realBodegueroEmpaque: "/images/bodeguero-empaque.jpg",
+  realBodegueroEscalera: "/images/bodeguero-escalera.jpg",
+  realOperarioMarcas: "/images/operario-amortiguador.jpg",
+  realAsesorClipboard: "/images/asesor-sistema.jpg",
+  realEquipoCompleto: "/images/equipo-completo.jpg",
+  realBodegaLlena: "/images/bodega-llena.jpg",
+  realBodegaPasillos: "/images/bodega-pasillos.jpg",
+  realEquipoFilas: "/images/equipo-filas.jpg",
+  realEquipoCascos: "/images/equipo-cascos.jpg",
+  realEquipoComercial: "/images/equipo-comercial.jpg",
+  realWagnerPastillas: "/images/wagner-pastillas.jpg",
+  heroBanner: "/images/hero-banner.png",
 };
 
 export const CATEGORIES = [
@@ -77,7 +83,7 @@ export const VALUES = [
 ];
 
 export const STATS = [
-  { value: 30, suffix: "+", label: "Años abasteciendo negocios automotrices" },
+  { value: 7, suffix: "+", label: "Años abasteciendo negocios automotrices" },
   { value: 31, suffix: "+", label: "Marcas con disponibilidad constante" },
   { value: 10, suffix: "", label: "Categorías de alta rotación" },
   { value: 100, suffix: "%", label: "Cobertura Nacional" },

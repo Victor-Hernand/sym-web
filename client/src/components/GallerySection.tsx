@@ -8,12 +8,16 @@ import { X } from "lucide-react";
 const galleryItems = [
   { src: IMAGES.realEquipoCompleto, alt: "Equipo comercial y logístico especializado", caption: "Equipo comercial y logístico especializado" },
   { src: IMAGES.realBodegaLlena, alt: "Bodega central con alta disponibilidad de inventario", caption: "Bodega central con alta disponibilidad de inventario" },
-  { src: IMAGES.realOperarioCarga, alt: "Preparación y despacho diario de pedidos", caption: "" },
-  { src: IMAGES.realConductorCamion, alt: "Distribución propia para entregas rápidas", caption: "Distribución propia para entregas rápidas" },
+  { src: IMAGES.realConductorCamion, alt: "Flota propia para entregas rápidas", caption: "Distribución propia para entregas rápidas" },
+  { src: IMAGES.realEquipoCascos, alt: "Equipo operativo con equipo de seguridad", caption: "Equipo operativo capacitado" },
   { src: IMAGES.realBodegueroEmpaque, alt: "Preparación y despacho diario de pedidos", caption: "Preparación y despacho diario de pedidos" },
-  { src: IMAGES.realBodegueroEscalera, alt: "Control y organización de inventario", caption: "" },
-  { src: IMAGES.realAsesorTelefono, alt: "Atención B2B", caption: "" },
-  { src: IMAGES.realOperarioMarcas, alt: "Control y organización de inventario", caption: "Control y organización de inventario" },
+  { src: IMAGES.realBodegueroEscalera, alt: "Control y organización de inventario", caption: "Control de inventario digitalizado" },
+  { src: IMAGES.realAsesorClipboard, alt: "Sistema de gestión propio sym.capgrupo.com", caption: "Sistema de gestión propio" },
+  { src: IMAGES.realOperarioMarcas, alt: "Control de calidad de productos", caption: "Control de calidad por marca" },
+  { src: IMAGES.realEquipoComercial, alt: "Equipo comercial y asesores", caption: "Asesores comerciales B2B" },
+  { src: IMAGES.realOperarioCarga, alt: "Preparación y despacho diario de pedidos", caption: "Logística operativa" },
+  { src: IMAGES.realWagnerPastillas, alt: "Marcas premium en stock continuo", caption: "Marcas premium en stock" },
+  { src: IMAGES.realEquipoFilas, alt: "Equipo WELMET", caption: "Equipo WELMET" },
 ];
 
 export default function GallerySection() {

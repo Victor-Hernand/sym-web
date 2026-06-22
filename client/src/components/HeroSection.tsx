@@ -44,17 +44,15 @@ function Particles() {
 export default function HeroSection() {
   const ref = useRef<HTMLElement>(null);
   const { scrollYProgress } = useScroll({ target: ref, offset: ["start start", "end start"] });
-  const bgY = useTransform(scrollYProgress, [0, 1], ["0%", "30%"]);
   const textY = useTransform(scrollYProgress, [0, 1], ["0%", "15%"]);
   const opacity = useTransform(scrollYProgress, [0, 0.5], [1, 0]);
 
   return (
     <section id="inicio" ref={ref} className="relative min-h-screen flex items-center overflow-hidden noise-overlay">
-      <motion.div className="absolute inset-0 z-0" style={{ y: bgY }}>
-        <img src={IMAGES.heroWarehouse} alt="Bodega de autopartes" className="w-full h-[120%] object-cover" />
-        <div className="absolute inset-0 bg-gradient-to-r from-black/90 via-black/75 to-black/50" />
-        <div className="absolute inset-0 bg-gradient-to-t from-[#f5f6f8] via-transparent to-transparent" />
-      </motion.div>
+      <div className="absolute inset-0 z-0">
+        <img src={IMAGES.heroBanner} alt="Bodega de autopartes Inversiones S&M" className="w-full h-full object-cover object-center" />
+        <div className="absolute inset-0 bg-gradient-to-r from-black/85 via-black/55 to-black/25" />
+      </div>
 
       <Particles />
 
@@ -62,23 +60,20 @@ export default function HeroSection() {
         <div className="max-w-3xl">
           <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.3 }} className="glass-blue inline-flex items-center gap-2 px-5 py-2.5 mb-8 rounded-sm">
             <span className="w-2 h-2 rounded-full bg-brand-blue animate-pulse" />
-            <span className="text-brand-blue-light text-xs font-display font-bold uppercase tracking-[0.2em]">Distribución mayorista de autopartes en Honduras</span>
+            <span className="text-white text-xs font-display font-bold uppercase tracking-[0.2em]">Distribución mayorista de autopartes en Honduras</span>
           </motion.div>
 
-          <motion.h1 initial={{ opacity: 0, y: 30 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.5, duration: 0.8 }} className="font-display font-black text-4xl sm:text-5xl md:text-6xl lg:text-7xl leading-[1] mb-6">
+          <motion.h1 initial={{ opacity: 0, y: 30 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.5, duration: 0.8 }} className="font-display font-black text-4xl sm:text-5xl md:text-6xl lg:text-7xl leading-[1] mb-6 [text-shadow:_0_4px_24px_rgba(0,0,0,0.7)]">
             <span className="text-white">Distribución mayorista de</span><br />
-            <span className="blue-gradient">autopartes en Honduras</span>
+            <span className="hero-blue-gradient drop-shadow-[0_4px_24px_rgba(0,0,0,0.7)]">autopartes en Honduras</span>
           </motion.h1>
 
-          <motion.p initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.7 }} className="text-white/85 text-lg md:text-xl max-w-xl leading-relaxed mb-4">
-            Importamos y distribuimos autopartes para negocios automotrices.
+
+          <motion.p initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.8 }} className="text-white text-base md:text-lg max-w-xl leading-relaxed mb-4 [text-shadow:_0_2px_12px_rgba(0,0,0,0.8)]">
+            Más de 7 años abasteciendo tiendas de autopartes con stock continuo, precios competitivos y entregas inmediatas.
           </motion.p>
 
-          <motion.p initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.8 }} className="text-white/70 text-base md:text-lg max-w-xl leading-relaxed mb-4">
-            Más de 30 años abasteciendo distribuidoras con stock continuo, precios mayoristas y entregas rápidas y seguras.
-          </motion.p>
-
-          <motion.p initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ delay: 1 }} className="blue-gradient text-xl md:text-2xl font-display font-bold italic mb-10">
+          <motion.p initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ delay: 1 }} className="hero-blue-gradient text-xl md:text-2xl font-display font-bold italic mb-10">
             "{COMPANY.slogan}"
           </motion.p>
 
