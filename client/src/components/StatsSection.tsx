@@ -17,7 +17,7 @@ function StatCard({ value, suffix, label, index }: { value: number; suffix: stri
       className="relative text-center group"
     >
       <div className="blue-gradient font-display font-black text-5xl md:text-6xl lg:text-7xl leading-none">
-        {count}{suffix}
+        {count.toLocaleString("en-US")}{suffix}
       </div>
       <div className="mt-3 font-display font-semibold text-sm md:text-base uppercase tracking-widest text-sym-charcoal/50">
         {label}

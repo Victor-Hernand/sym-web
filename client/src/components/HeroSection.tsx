@@ -1,7 +1,7 @@
 // DESIGN: Light Premium — Hero with parallax, particles, brand blue gradient
 import { COMPANY, IMAGES } from "@/lib/data";
 import { motion, useScroll, useTransform } from "framer-motion";
-import { ArrowDown, MessageCircle, BookOpen } from "lucide-react";
+import { ArrowDown, MessageCircle } from "lucide-react";
 import { useRef, useMemo } from "react";
 
 function Particles() {
@@ -82,9 +82,6 @@ export default function HeroSection() {
               <a href={COMPANY.whatsapp} target="_blank" rel="noopener noreferrer" className="btn-brand px-8 py-4 rounded-sm font-display text-base flex items-center gap-3">
                 <MessageCircle className="w-5 h-5" /> SOLICITAR COTIZACIÓN MAYORISTA
               </a>
-              <button onClick={() => document.querySelector("#productos")?.scrollIntoView({ behavior: "smooth" })} className="border-2 border-white/40 text-white font-semibold uppercase tracking-wider px-8 py-4 rounded-sm font-display text-base flex items-center gap-3 hover:bg-white/10 hover:border-white/60 transition-all">
-                <BookOpen className="w-5 h-5" /> VER CATÁLOGO DE PRODUCTOS
-              </button>
             </div>
             <span className="text-white/60 text-xs font-display uppercase tracking-wider">Atención exclusiva para clientes B2B</span>
           </motion.div>

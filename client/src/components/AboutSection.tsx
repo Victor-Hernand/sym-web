@@ -14,16 +14,15 @@ export default function AboutSection() {
       <div className="container relative z-10">
         <div className="grid lg:grid-cols-2 gap-16 items-center">
           <motion.div initial={{ opacity: 0, x: -40 }} animate={isInView ? { opacity: 1, x: 0 } : {}} transition={{ duration: 0.8 }} className="relative">
-            <div className="relative">
-              <img src={IMAGES.realEquipoCompleto} alt="Equipo Inversiones S&M" className="w-full aspect-[4/3] object-cover rounded-sm" />
-              <div className="absolute inset-0 bg-gradient-to-t from-light-bg/60 via-transparent to-transparent rounded-sm" />
-            </div>
-            <p className="text-[#1B3A6B]/65 text-sm mt-4 font-display italic text-center">
-              Equipo comercial y logístico especializado en atención B2B
-            </p>
-            <div className="absolute -bottom-6 -right-6 glass-blue p-6 rounded-sm">
-              <div className="blue-gradient font-display font-black text-5xl leading-none">30+</div>
-              <div className="text-[#1B3A6B]/55 font-display font-semibold text-sm uppercase tracking-wider mt-1">Años de Experiencia</div>
+            <img src={IMAGES.realEquipoCompleto} alt="Equipo Inversiones S&M" className="w-full aspect-[4/3] object-cover rounded-sm" />
+            <div className="mt-5 flex items-center gap-4">
+              <div className="bg-white border border-[#1B3A6B]/8 shadow-sm px-5 py-4 rounded-sm shrink-0 text-center">
+                <div className="blue-gradient font-display font-black text-4xl leading-none">7+</div>
+                <div className="text-[#1B3A6B]/55 font-display font-semibold text-xs uppercase tracking-wider mt-1">Años de Experiencia</div>
+              </div>
+              <p className="text-[#1B3A6B]/65 text-sm font-display italic">
+                Equipo comercial y logístico especializado en atención B2B
+              </p>
             </div>
             <div className="absolute -top-4 -left-4 w-20 h-20 border-t-2 border-l-2 border-brand-blue-light/40" />
           </motion.div>

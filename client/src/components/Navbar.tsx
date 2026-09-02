@@ -1,8 +1,9 @@
 // DESIGN: Light Premium — Glassmorphism navbar with brand blue accents
 import { COMPANY, IMAGES, NAV_ITEMS } from "@/lib/data";
-import { Phone, Mail, Clock, Menu, X, MessageCircle } from "lucide-react";
+import { Phone, Mail, Clock, Menu, X, MessageCircle, Facebook, Instagram } from "lucide-react";
 import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
+import TikTokIcon from "@/components/icons/TikTokIcon";
 
 export default function Navbar() {
   const [scrolled, setScrolled] = useState(false);
@@ -33,14 +34,9 @@ export default function Navbar() {
               <Mail className="w-3 h-3 text-brand-blue-light" /> {COMPANY.email}
             </a>
           </div>
-          <div className="flex items-center gap-6">
-            <span className="flex items-center gap-1.5">
-              <Clock className="w-3 h-3 text-brand-blue-light" /> {COMPANY.schedule}
-            </span>
-            <a href={COMPANY.whatsapp} target="_blank" rel="noopener noreferrer" className="btn-brand px-4 py-1 text-xs rounded-sm font-display">
-              COTIZAR AHORA
-            </a>
-          </div>
+          <span className="flex items-center gap-1.5">
+            <Clock className="w-3 h-3 text-brand-blue-light" /> {COMPANY.schedule}
+          </span>
         </div>
       </div>
 
@@ -48,7 +44,7 @@ export default function Navbar() {
       <header className={`sticky top-0 z-50 transition-all duration-500 ${scrolled ? "glass shadow-2xl shadow-brand-blue/10" : "bg-light-surface/80 backdrop-blur-sm"}`}>
         <div className="container py-3 flex items-center justify-between">
           <a href="#inicio" className="flex items-center gap-3 group">
-            <img src={IMAGES.logo} alt="Inversiones S&M" className="h-12 w-auto object-contain" />
+            <img src={IMAGES.logo} alt="Inversiones S&M" className="h-16 md:h-20 w-auto object-contain" />
           </a>
 
           {/* Desktop nav */}
@@ -66,6 +62,38 @@ export default function Navbar() {
           </nav>
 
           <div className="hidden lg:flex items-center gap-3">
+            <div className="flex items-center gap-2 pr-3 mr-1 border-r border-brand-blue/12">
+              <a
+                href={COMPANY.facebook}
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="Facebook de Inversiones S&M"
+                title="Facebook"
+                className="w-9 h-9 flex items-center justify-center rounded-sm border border-brand-blue/15 text-brand-blue-light hover:bg-brand-blue hover:border-brand-blue hover:text-white transition-all"
+              >
+                <Facebook className="w-4 h-4" />
+              </a>
+              <a
+                href={COMPANY.instagram}
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="Instagram de Inversiones S&M"
+                title="Instagram"
+                className="w-9 h-9 flex items-center justify-center rounded-sm border border-brand-blue/15 text-brand-blue-light hover:bg-brand-blue hover:border-brand-blue hover:text-white transition-all"
+              >
+                <Instagram className="w-4 h-4" />
+              </a>
+              <a
+                href={COMPANY.tiktok}
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="TikTok de Inversiones S&M"
+                title="TikTok"
+                className="w-9 h-9 flex items-center justify-center rounded-sm border border-brand-blue/15 text-brand-blue-light hover:bg-brand-blue hover:border-brand-blue hover:text-white transition-all"
+              >
+                <TikTokIcon className="w-4 h-4" />
+              </a>
+            </div>
             <a
               href={COMPANY.whatsapp}
               target="_blank"
@@ -113,6 +141,35 @@ export default function Navbar() {
                 >
                   COTIZAR POR WHATSAPP
                 </a>
+                <div className="flex items-center justify-center gap-3 mt-3 pt-3 border-t border-brand-blue/8">
+                  <a
+                    href={COMPANY.facebook}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    aria-label="Facebook de Inversiones S&M"
+                    className="w-10 h-10 flex items-center justify-center rounded-sm border border-brand-blue/15 text-brand-blue-light hover:bg-brand-blue hover:border-brand-blue hover:text-white transition-all"
+                  >
+                    <Facebook className="w-5 h-5" />
+                  </a>
+                  <a
+                    href={COMPANY.instagram}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    aria-label="Instagram de Inversiones S&M"
+                    className="w-10 h-10 flex items-center justify-center rounded-sm border border-brand-blue/15 text-brand-blue-light hover:bg-brand-blue hover:border-brand-blue hover:text-white transition-all"
+                  >
+                    <Instagram className="w-5 h-5" />
+                  </a>
+                  <a
+                    href={COMPANY.tiktok}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    aria-label="TikTok de Inversiones S&M"
+                    className="w-10 h-10 flex items-center justify-center rounded-sm border border-brand-blue/15 text-brand-blue-light hover:bg-brand-blue hover:border-brand-blue hover:text-white transition-all"
+                  >
+                    <TikTokIcon className="w-5 h-5" />
+                  </a>
+                </div>
               </div>
             </motion.div>
           )}
