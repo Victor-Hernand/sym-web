@@ -17,8 +17,9 @@ export const COMPANY = {
   schedule: "Lunes a Viernes: 8:00 AM - 5:00 PM | Sábados: 8:00 AM - 12:00 PM",
   whatsapp: "https://wa.me/50492109620",
   website: "https://inversionessymhn.com",
-  facebook: "https://www.facebook.com/InversionesSyM",
-  instagram: "https://www.instagram.com/inversionessym/",
+  facebook: "https://www.facebook.com/invsym/?locale=es_LA",
+  instagram: "https://www.instagram.com/inversiones.sym_hn/",
+  tiktok: "https://www.tiktok.com/@inversionessym",
 };
 
 export const IMAGES = {
@@ -43,27 +44,47 @@ export const IMAGES = {
   realEquipoCascos: "/images/equipo-cascos.jpg",
   realEquipoComercial: "/images/equipo-comercial.jpg",
   realWagnerPastillas: "/images/wagner-pastillas.jpg",
+  // Flyers promocionales de producto (afiches 4:5 de marca)
+  promoBurekitekPastillas: "/images/promo-burekitek-pastillas.jpg",
+  promoRtechDiscoFreno: "/images/promo-rtech-disco-freno.jpg",
+  promoWelmetAmortiguador: "/images/promo-welmet-amortiguador.jpg",
+  promoSuspensionProMunequines: "/images/promo-suspensionpro-munequines.jpg",
+  promoMotortekPrensaClutch: "/images/promo-motortek-prensa-clutch.jpg",
+  promoWelmetRadiadores: "/images/promo-welmet-radiadores.jpg",
+  promoWelmetBlowerMotor: "/images/promo-welmet-blower-motor.jpg",
+  promoMutekiKitTiempo: "/images/promo-muteki-kit-tiempo.jpg",
+  promoWagnerIluminacion: "/images/promo-wagner-iluminacion.jpg",
+  promoWelmetBufas: "/images/promo-welmet-bufas.jpg",
   heroBanner: "/images/hero-banner.png",
 };
 
-export const CATEGORIES = [
-  { name: "Motor", icon: "Cog", description: "Pistones, anillos, juntas, cadenas de distribución y más", percentage: 98 },
-  { name: "Frenos", icon: "CircleDot", description: "Pastillas, discos, tambores, bombas y componentes completos", percentage: 95 },
-  { name: "Embragues y Transmisión", icon: "Settings", description: "Kits de embrague, discos, collares y componentes de transmisión", percentage: 95 },
-  { name: "Dirección y Suspensión", icon: "ArrowUpDown", description: "Terminales, rótulas, amortiguadores, resortes y brazos", percentage: 95 },
-  { name: "Eléctricos", icon: "Zap", description: "Baterías, alternadores, arrancadores, sensores y relés", percentage: 90 },
-  { name: "Refrigeración", icon: "Thermometer", description: "Radiadores, ventiladores, termostatos y bombas de agua", percentage: 90 },
-  { name: "Rodamientos", icon: "Circle", description: "De rueda, caja, diferencial e industriales", percentage: 85 },
-  { name: "Fluidos y Aditivos", icon: "Droplets", description: "Aceites, líquidos de frenos, refrigerantes y aditivos", percentage: 85 },
-  { name: "Filtros", icon: "Filter", description: "De aceite, combustible, aire y cabina", percentage: 90 },
-  { name: "Accesorios", icon: "Wrench", description: "Espejos, luces, faros, limpiaparabrisas y más", percentage: 85 },
+export type Category = {
+  name: string;
+  icon: string;
+  /** Subcategorías concretas; se muestran como chips en la tarjeta. */
+  items: string[];
+  percentage: number;
+  /** Flyer promocional 4:5 de la línea; si falta, la tarjeta muestra el ícono. */
+  image?: string;
+  imageAlt?: string;
+};
+
+export const CATEGORIES: Category[] = [
+  { name: "Motor", icon: "Cog", items: ["Pistones", "Anillos", "Juntas", "Cadenas de distribución", "Kits de tiempo"], percentage: 98, image: IMAGES.promoMutekiKitTiempo, imageAlt: "Kit de tiempo MUTEKI distribuido por Inversiones S&M" },
+  { name: "Frenos", icon: "CircleDot", items: ["Pastillas", "Discos", "Tambores", "Bombas", "Componentes completos"], percentage: 95, image: IMAGES.promoBurekitekPastillas, imageAlt: "Pastillas de freno cerámicas BUREKITEK distribuidas por Inversiones S&M" },
+  { name: "Embragues y Transmisión", icon: "Settings", items: ["Kits de embrague", "Discos", "Collares", "Prensas", "Componentes de transmisión"], percentage: 95, image: IMAGES.promoMotortekPrensaClutch, imageAlt: "Prensa de clutch MOTORTEK distribuida por Inversiones S&M" },
+  { name: "Dirección y Suspensión", icon: "ArrowUpDown", items: ["Terminales", "Rótulas", "Muñequines", "Amortiguadores", "Resortes", "Brazos"], percentage: 95, image: IMAGES.promoWelmetAmortiguador, imageAlt: "Amortiguadores WELMET para Toyota Corolla 90-02 distribuidos por Inversiones S&M" },
+  { name: "Eléctricos", icon: "Zap", items: ["Baterías", "Alternadores", "Arrancadores", "Sensores", "Relés", "Iluminación"], percentage: 90, image: IMAGES.promoWagnerIluminacion, imageAlt: "Iluminación automotriz WAGNER distribuida por Inversiones S&M" },
+  { name: "Refrigeración", icon: "Thermometer", items: ["Radiadores", "Ventiladores", "Termostatos", "Bombas de agua", "Blower motor"], percentage: 90, image: IMAGES.promoWelmetRadiadores, imageAlt: "Radiadores WELMET distribuidos por Inversiones S&M" },
+  { name: "Rodamientos", icon: "Circle", items: ["De rueda", "De caja", "De diferencial", "Bufas", "Industriales"], percentage: 85, image: IMAGES.promoWelmetBufas, imageAlt: "Bufas (mazas de rueda) WELMET distribuidas por Inversiones S&M" },
 ];
 
 export const BRANDS = [
   "WELMET", "R-TECH", "EDK", "ENDO", "KOYO", "MOTORTEK", "MXD-TEK", "SYNTECFIL",
-  "HONDA", "MRK", "Muteki", "RSTACHS", "HISA", "KAYSER", "DENSO", "DJB",
-  "FREEMAP", "MIYACO", "8+PLUS", "BUREKITEK", "CENTURY", "NGC", "POS", "SEIWA",
-  "SUSPENSION PRO", "TOYO", "SHIBUMI", "YOKOMITSU", "TOMITA", "AISIN", "MICHELIN",
+  "HONDA", "MRK", "MUTEKI", "RSTACHS", "HISA", "KAYSER", "DENSO", "DJB",
+  "FREEMAP", "MOTORMAP", "WAGNER", "MIYACO", "8+PLUS", "BUREKITEK", "CENTURY",
+  "NGC", "POS", "SEIWA", "SUSPENSION PRO", "TOYO", "SHIBUMI", "YOKOMITSU",
+  "TOMITA", "AISIN", "MICHELIN",
 ];
 
 export const PROCESS_STEPS = [
@@ -84,8 +105,8 @@ export const VALUES = [
 
 export const STATS = [
   { value: 7, suffix: "+", label: "Años abasteciendo negocios automotrices" },
-  { value: 31, suffix: "+", label: "Marcas con disponibilidad constante" },
-  { value: 10, suffix: "", label: "Categorías de alta rotación" },
+  { value: 10000, suffix: "+", label: "SKU disponibles" },
+  { value: 22, suffix: "+", label: "Marcas disponibles" },
   { value: 100, suffix: "%", label: "Cobertura Nacional" },
 ];
 
@@ -100,7 +121,7 @@ export const NAV_ITEMS = [
 
 export const GALLERY_IMAGES = [
   { src: IMAGES.realEquipoCompleto, alt: "Equipo de ventas con productos estrella", caption: "Nuestro Equipo Comercial" },
-  { src: IMAGES.realBodegaLlena, alt: "Bodega llena de filtros Honda", caption: "Inventario Permanente" },
+  { src: IMAGES.realBodegaLlena, alt: "Bodega con inventario de amortiguadores WELMET", caption: "Inventario Permanente" },
   { src: IMAGES.realBodegueroEmpaque, alt: "Preparación de pedidos", caption: "Empaque de Calidad" },
   { src: IMAGES.realOperarioCarga, alt: "Carga de productos para entrega", caption: "Logística Eficiente" },
   { src: IMAGES.realConductorCamion, alt: "Conductor de camión S&M", caption: "Entrega Nacional" },
@@ -118,8 +139,39 @@ export const COVERAGE_ZONES = [
   { name: "Zona Occidental", description: "Santa Rosa de Copán, Gracias y alrededores" },
 ];
 
-export const FEATURED_PRODUCTS = [
-  { name: "Amortiguadores WELMET", tag: "Más Vendido", description: "Diseñados para alta durabilidad y desempeño, ideales para distribuidoras que buscan productos de alta rotación y bajo reclamo.", image: IMAGES.autopartsDisplay },
-  { name: "Discos de Freno R-TECH", tag: "Alta durabilidad", description: "Discos ventilados de alta resistencia con tratamiento anticorrosivo certificado.", image: IMAGES.realBodegueroEmpaque },
-  { name: "Filtros SYNTECFIL", tag: "Marca destacada", description: "Filtración superior para motor, aceite y cabina. Compatibilidad universal.", image: IMAGES.realBodegueroEscalera },
+export type FeaturedProduct = {
+  name: string;
+  brand: string;
+  tag: string;
+  description: string;
+  image: string;
+  imageAlt: string;
+};
+
+// Los tres flyers que no ocupa ninguna categoría, para no repetir imagen.
+export const FEATURED_PRODUCTS: FeaturedProduct[] = [
+  {
+    name: "Discos de Freno",
+    brand: "R-TECH",
+    tag: "Más vendido",
+    description: "Equipo original de alto rendimiento térmico. Una de las líneas que más repone el distribuidor por su rotación constante en taller.",
+    image: IMAGES.promoRtechDiscoFreno,
+    imageAlt: "Discos de freno R-TECH con su empaque, distribuidos por Inversiones S&M",
+  },
+  {
+    name: "Muñequines",
+    brand: "SUSPENSION PRO",
+    tag: "Alta durabilidad",
+    description: "Terminales axiales con diseño y tecnología japonesa, certificación ISO y empaque de exhibición listo para mostrador.",
+    image: IMAGES.promoSuspensionProMunequines,
+    imageAlt: "Muñequines SUSPENSION PRO en empaque de exhibición, distribuidos por Inversiones S&M",
+  },
+  {
+    name: "Blower Motor",
+    brand: "WELMET",
+    tag: "Alta rotación",
+    description: "Motores de ventilación con flujo de aire estable y durabilidad probada, para la línea de climatización más buscada en taller.",
+    image: IMAGES.promoWelmetBlowerMotor,
+    imageAlt: "Blower motor WELMET para sistema de climatización, distribuido por Inversiones S&M",
+  },
 ];

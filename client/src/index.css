@@ -176,6 +176,16 @@
     box-shadow: 0 2px 16px rgba(27, 58, 107, 0.06);
   }
 
+  /* Panel oscuro: para tarjetas con texto blanco sobre foto/overlay oscuro.
+     .glass es blanco al 70% y deja ilegible el texto claro. */
+  .glass-dark {
+    background: rgba(14, 34, 64, 0.62);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    border: 1px solid rgba(255, 255, 255, 0.16);
+    box-shadow: 0 4px 24px rgba(0, 0, 0, 0.25);
+  }
+
   .glass-blue {
     background: linear-gradient(135deg, rgba(27, 58, 107, 0.06), rgba(59, 111, 196, 0.04));
     backdrop-filter: blur(16px);
@@ -332,6 +342,14 @@
     width: 2rem;
     height: 2px;
     background: linear-gradient(90deg, #1B3A6B, transparent);
+  }
+
+  /* Variante clara de .section-label para fondos oscuros */
+  .section-label-light {
+    color: rgba(255, 255, 255, 0.85);
+  }
+  .section-label-light::before {
+    background: linear-gradient(90deg, #7DD3FC, transparent);
   }
 
   /* === RED GRADIENT TEXT === */

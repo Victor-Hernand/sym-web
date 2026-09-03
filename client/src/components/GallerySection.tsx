@@ -1,9 +1,9 @@
 // DESIGN: Light Premium — Photo gallery with real company photos
+import Lightbox from "@/components/Lightbox";
 import { useInView } from "@/hooks/useInView";
 import { IMAGES } from "@/lib/data";
 import { motion } from "framer-motion";
 import { useState } from "react";
-import { X } from "lucide-react";
 
 const galleryItems = [
   { src: IMAGES.realEquipoCompleto, alt: "Equipo comercial y logístico especializado", caption: "Equipo comercial y logístico especializado" },
@@ -68,28 +68,12 @@ export default function GallerySection() {
         </div>
       </div>
 
-      {/* Lightbox */}
-      {lightbox !== null && (
-        <motion.div
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          exit={{ opacity: 0 }}
-          className="fixed inset-0 z-[100] bg-black/95 flex items-center justify-center p-4"
-          onClick={() => setLightbox(null)}
-        >
-          <button className="absolute top-6 right-6 text-white/60 hover:text-white transition-colors" onClick={() => setLightbox(null)}>
-            <X className="w-8 h-8" />
-          </button>
-          <img
-            src={galleryItems[lightbox].src}
-            alt={galleryItems[lightbox].alt}
-            className="max-w-full max-h-[85vh] object-contain rounded-sm"
-          />
-          <div className="absolute bottom-8 left-1/2 -translate-x-1/2 text-center">
-            <span className="blue-gradient font-display font-bold text-lg uppercase tracking-wider">{galleryItems[lightbox].caption}</span>
-          </div>
-        </motion.div>
-      )}
+      <Lightbox
+        items={galleryItems}
+        index={lightbox}
+        onIndexChange={setLightbox}
+        onClose={() => setLightbox(null)}
+      />
     </section>
   );
 }

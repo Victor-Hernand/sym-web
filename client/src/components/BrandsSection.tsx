@@ -2,7 +2,7 @@
 import { useInView } from "@/hooks/useInView";
 import { BRANDS, COMPANY } from "@/lib/data";
 import { motion } from "framer-motion";
-import { ArrowRight, MessageCircle } from "lucide-react";
+import { MessageCircle } from "lucide-react";
 
 export default function BrandsSection() {
   const { ref, isInView } = useInView();
@@ -51,14 +51,6 @@ export default function BrandsSection() {
           className="btn-brand px-8 py-3.5 rounded-sm font-display text-sm inline-flex items-center gap-3"
         >
           <MessageCircle className="w-4 h-4" /> SOLICITAR CATÁLOGO POR MARCAS
-        </a>
-        <a
-          href={`${COMPANY.whatsapp}?text=${encodeURIComponent("Hola, deseo cotizar marcas específicas.")}`}
-          target="_blank"
-          rel="noopener noreferrer"
-          className="btn-outline-brand px-8 py-3.5 rounded-sm font-display text-sm inline-flex items-center gap-3"
-        >
-          COTIZAR MARCAS ESPECÍFICAS <ArrowRight className="w-4 h-4" />
         </a>
       </div>
 

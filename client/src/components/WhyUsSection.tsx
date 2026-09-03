@@ -7,10 +7,10 @@ import { ShieldCheck, Truck, Users, BadgeDollarSign, Headphones, Package } from 
 const advantages = [
   { icon: ShieldCheck, title: "Garantía de Calidad", description: "Autopartes importadas directamente de fábricas certificadas, reduciendo devoluciones y reclamos para tu negocio." },
   { icon: BadgeDollarSign, title: "Precios Competitivos", description: "Importación directa que nos permite ofrecer los mejores precios del mercado." },
-  { icon: Truck, title: "Entrega Rápida", description: "Logística eficiente con entregas rápidas que te permiten no detener la operación de tu negocio." },
+  { icon: Truck, title: "Entrega Rápida", description: "Contamos con una logística eficiente y entregas rápidas, respaldadas por nuestro compromiso de realizar tus entregas en un plazo menor a 48 horas, para que tu negocio mantenga su operación sin interrupciones." },
   { icon: Users, title: "Asesoría Personalizada", description: "Asesores especializados que entienden tu negocio y te recomiendan los productos con mayor rotación." },
   { icon: Headphones, title: "Soporte Continuo", description: "Atención dedicada antes, durante y después de cada compra para resolver cualquier requerimiento." },
-  { icon: Package, title: "Amplio Inventario", description: "Más de 10 categorías de productos y 30+ marcas siempre disponibles en bodega." },
+  { icon: Package, title: "Amplio Inventario", description: "Más de 10,000 SKU y 22+ marcas siempre disponibles en bodega." },
 ];
 
 export default function WhyUsSection() {
