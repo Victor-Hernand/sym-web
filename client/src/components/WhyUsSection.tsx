@@ -10,7 +10,7 @@ const advantages = [
   { icon: Truck, title: "Entrega Rápida", description: "Contamos con una logística eficiente y entregas rápidas, respaldadas por nuestro compromiso de realizar tus entregas en un plazo menor a 48 horas, para que tu negocio mantenga su operación sin interrupciones." },
   { icon: Users, title: "Asesoría Personalizada", description: "Asesores especializados que entienden tu negocio y te recomiendan los productos con mayor rotación." },
   { icon: Headphones, title: "Soporte Continuo", description: "Atención dedicada antes, durante y después de cada compra para resolver cualquier requerimiento." },
-  { icon: Package, title: "Amplio Inventario", description: "Más de 10,000 SKU y 22+ marcas siempre disponibles en bodega." },
+  { icon: Package, title: "Amplio Inventario", description: "Más de 10,000 SKU y 33 marcas siempre disponibles en bodega." },
 ];
 
 export default function WhyUsSection() {
@@ -41,11 +41,11 @@ export default function WhyUsSection() {
                   initial={{ opacity: 0, y: 15 }}
                   animate={isInView ? { opacity: 1, y: 0 } : {}}
                   transition={{ duration: 0.4, delay: 0.3 + i * 0.08 }}
-                  className="bg-white border border-[#1B3A6B]/8 shadow-sm p-4 rounded-sm card-shine group hover:border-brand-blue-light/25 hover:shadow-md transition-all"
+                  className="bg-white border border-[#1B3A6B]/8 shadow-sm p-4 rounded-sm card-shine group hover:border-brand-blue-light/25 hover-lift"
                 >
                   <div className="flex items-start gap-3">
                     <div className="w-9 h-9 bg-[#1B3A6B]/8 group-hover:bg-[#1B3A6B]/12 flex items-center justify-center shrink-0 rounded-sm transition-all">
-                      <adv.icon className="w-4 h-4 text-brand-blue-light" />
+                      <adv.icon className="w-4 h-4 text-brand-blue-light group-hover:scale-125 transition-transform duration-300" />
                     </div>
                     <div>
                       <h4 className="font-display font-bold text-sm uppercase tracking-wider text-[#1B3A6B]">{adv.title}</h4>

@@ -69,7 +69,7 @@ export default function Navbar() {
                 rel="noopener noreferrer"
                 aria-label="Facebook de Inversiones S&M"
                 title="Facebook"
-                className="w-9 h-9 flex items-center justify-center rounded-sm border border-brand-blue/15 text-brand-blue-light hover:bg-brand-blue hover:border-brand-blue hover:text-white transition-all"
+                className="w-9 h-9 flex items-center justify-center rounded-sm border border-brand-blue/15 text-brand-blue-light hover:bg-brand-blue hover:border-brand-blue hover:text-white transition-all duration-300 hover:-translate-y-0.5 hover:scale-110"
               >
                 <Facebook className="w-4 h-4" />
               </a>
@@ -79,7 +79,7 @@ export default function Navbar() {
                 rel="noopener noreferrer"
                 aria-label="Instagram de Inversiones S&M"
                 title="Instagram"
-                className="w-9 h-9 flex items-center justify-center rounded-sm border border-brand-blue/15 text-brand-blue-light hover:bg-brand-blue hover:border-brand-blue hover:text-white transition-all"
+                className="w-9 h-9 flex items-center justify-center rounded-sm border border-brand-blue/15 text-brand-blue-light hover:bg-brand-blue hover:border-brand-blue hover:text-white transition-all duration-300 hover:-translate-y-0.5 hover:scale-110"
               >
                 <Instagram className="w-4 h-4" />
               </a>
@@ -89,7 +89,7 @@ export default function Navbar() {
                 rel="noopener noreferrer"
                 aria-label="TikTok de Inversiones S&M"
                 title="TikTok"
-                className="w-9 h-9 flex items-center justify-center rounded-sm border border-brand-blue/15 text-brand-blue-light hover:bg-brand-blue hover:border-brand-blue hover:text-white transition-all"
+                className="w-9 h-9 flex items-center justify-center rounded-sm border border-brand-blue/15 text-brand-blue-light hover:bg-brand-blue hover:border-brand-blue hover:text-white transition-all duration-300 hover:-translate-y-0.5 hover:scale-110"
               >
                 <TikTokIcon className="w-4 h-4" />
               </a>
@@ -128,7 +128,7 @@ export default function Navbar() {
                   <button
                     key={item.href}
                     onClick={() => handleNavClick(item.href)}
-                    className="py-3 px-4 text-left font-display font-semibold uppercase tracking-wider text-sym-charcoal/70 hover:text-brand-blue-light hover:bg-brand-blue/5 transition-all"
+                    className="py-3 px-4 text-left font-display font-semibold uppercase tracking-wider text-sym-charcoal/70 hover:text-brand-blue-light hover:bg-brand-blue/5 hover-slide"
                   >
                     {item.label}
                   </button>

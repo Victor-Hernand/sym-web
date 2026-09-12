@@ -3,10 +3,10 @@ import Lightbox from "@/components/Lightbox";
 import { useInView } from "@/hooks/useInView";
 import { CATEGORIES, COMPANY, FEATURED_PRODUCTS } from "@/lib/data";
 import { motion } from "framer-motion";
-import { Cog, CircleDot, Settings, ArrowUpDown, Zap, Thermometer, Circle, Star, ArrowRight, MessageCircle, ZoomIn } from "lucide-react";
+import { Cog, CircleDot, Settings, ArrowUpDown, Zap, Thermometer, Circle, Filter, Droplets, Lightbulb, Star, ArrowRight, MessageCircle, ZoomIn } from "lucide-react";
 import { useMemo, useState } from "react";
 
-const iconMap: Record<string, React.ElementType> = { Cog, CircleDot, Settings, ArrowUpDown, Zap, Thermometer, Circle };
+const iconMap: Record<string, React.ElementType> = { Cog, CircleDot, Settings, ArrowUpDown, Zap, Thermometer, Circle, Filter, Droplets, Lightbulb };
 
 export default function ProductsSection() {
   const { ref, isInView } = useInView();
@@ -47,16 +47,18 @@ export default function ProductsSection() {
           {CATEGORIES.map((cat, i) => {
             const Icon = iconMap[cat.icon] || Cog;
             return (
-              <button
+              <motion.button
                 key={cat.name}
                 onClick={() => setActiveTab(i)}
+                whileHover={{ y: -3, scale: 1.03 }}
+                whileTap={{ scale: 0.96 }}
                 className={`flex items-center gap-2 px-4 py-2.5 rounded-sm font-display font-semibold text-xs uppercase tracking-wider transition-all ${
                   activeTab === i ? "btn-brand" : "bg-white border border-[#1B3A6B]/10 shadow-sm text-[#1B3A6B]/60 hover:text-brand-blue-light hover:border-brand-blue-light/25"
                 }`}
               >
                 <Icon className="w-3.5 h-3.5" />
                 {cat.name}
-              </button>
+              </motion.button>
             );
           })}
         </div>

@@ -56,7 +56,7 @@ export default function HeroSection() {
 
       <Particles />
 
-      <motion.div className="container relative z-20 pt-24 pb-16" style={{ y: textY, opacity }}>
+      <motion.div className="container relative z-20 pt-24 pb-16 max-lg:pl-2 max-lg:pr-4" style={{ y: textY, opacity }}>
         <div className="max-w-3xl">
           <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.3 }} className="glass-blue inline-flex items-center gap-2 px-5 py-2.5 mb-8 rounded-sm">
             <span className="w-2 h-2 rounded-full bg-brand-blue animate-pulse" />

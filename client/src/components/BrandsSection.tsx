@@ -17,7 +17,7 @@ export default function BrandsSection() {
           <h2 className="font-display font-black text-4xl md:text-5xl text-[#1B3A6B] mt-4 mb-4">
             Marcas líderes que garantizan <span className="blue-gradient">rotación y respaldo</span>
           </h2>
-          <p className="text-[#1B3A6B]/55 max-w-2xl mx-auto">Trabajamos con marcas reconocidas internacionalmente, seleccionadas por su calidad, alta demanda y respaldo para el mercado mayorista.</p>
+          <p className="text-[#1B3A6B]/55 max-w-2xl mx-auto">Trabajamos con las marcas más reconocidas del mercado internacional, garantizando calidad, confiabilidad y respaldo técnico. Nuestro portafolio incluye marcas líderes en cada categoría, seleccionadas por su reputación, disponibilidad y relación calidad-precio.</p>
         </motion.div>
       </div>
 
@@ -25,7 +25,7 @@ export default function BrandsSection() {
       <div className="relative mb-4 overflow-hidden">
         <div className="flex animate-marquee whitespace-nowrap">
           {[...firstRow, ...firstRow, ...firstRow].map((brand, i) => (
-            <div key={`r1-${i}`} className="inline-flex items-center justify-center mx-3 px-8 py-4 bg-white border border-[#1B3A6B]/8 shadow-sm hover:border-brand-blue-light/30 hover:shadow-md transition-all duration-300 shrink-0 group">
+            <div key={`r1-${i}`} className="inline-flex items-center justify-center mx-3 px-8 py-4 bg-white border border-[#1B3A6B]/8 shadow-sm hover:border-brand-blue-light/30 rounded-sm hover-lift shrink-0 group">
               <span className="font-display font-bold text-sm uppercase tracking-wider text-[#1B3A6B]/40 group-hover:text-brand-blue-light transition-colors whitespace-nowrap">{brand}</span>
             </div>
           ))}
@@ -36,7 +36,7 @@ export default function BrandsSection() {
       <div className="relative overflow-hidden">
         <div className="flex animate-marquee-reverse whitespace-nowrap">
           {[...secondRow, ...secondRow, ...secondRow].map((brand, i) => (
-            <div key={`r2-${i}`} className="inline-flex items-center justify-center mx-3 px-8 py-4 bg-white border border-[#1B3A6B]/8 shadow-sm hover:border-brand-blue-light/30 hover:shadow-md transition-all duration-300 shrink-0 group">
+            <div key={`r2-${i}`} className="inline-flex items-center justify-center mx-3 px-8 py-4 bg-white border border-[#1B3A6B]/8 shadow-sm hover:border-brand-blue-light/30 rounded-sm hover-lift shrink-0 group">
               <span className="font-display font-bold text-sm uppercase tracking-wider text-[#1B3A6B]/40 group-hover:text-brand-blue-light transition-colors whitespace-nowrap">{brand}</span>
             </div>
           ))}
