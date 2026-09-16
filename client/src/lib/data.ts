@@ -11,7 +11,7 @@ export const COMPANY = {
   slogan: "Ganando Tú, Ganamos Nosotros",
   tagline: "Distribución mayorista de autopartes en Honduras. Precios mayoristas y asesoría especializada para distribuidores.",
   phone: "+504 9210-9620",
-  email: "inversionescastro19@gmail.com",
+  email: "ventas@sym.com",
   address: "Boulevard Comunidad Económica Europea, frente a Plaza Aire Frío",
   city: "Tegucigalpa, Honduras",
   schedule: "Lunes a Viernes: 8:00 AM - 5:00 PM | Sábados: 8:00 AM - 12:00 PM",
