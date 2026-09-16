@@ -63,27 +63,71 @@ export default function HeroSection() {
             <span className="text-white text-xs font-display font-bold uppercase tracking-[0.2em]">Distribución mayorista de autopartes en Honduras</span>
           </motion.div>
 
-          <motion.h1 initial={{ opacity: 0, y: 30 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.5, duration: 0.8 }} className="font-display font-black text-4xl sm:text-5xl md:text-6xl lg:text-7xl leading-[1] mb-6 [text-shadow:_0_4px_24px_rgba(0,0,0,0.7)]">
-            <span className="text-white">Distribución mayorista de</span><br />
-            <span className="hero-blue-gradient drop-shadow-[0_4px_24px_rgba(0,0,0,0.7)]">autopartes en Honduras</span>
+          <motion.h1
+            initial={{ opacity: 0, y: 30 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: 0.5, duration: 0.8, ease: "easeOut" }}
+            className="font-display font-black text-4xl sm:text-5xl md:text-6xl lg:text-7xl leading-[1] mb-6 [text-shadow:_0_4px_24px_rgba(0,0,0,0.7)]"
+          >
+            <motion.span
+              initial={{ opacity: 0, x: -30 }}
+              animate={{ opacity: 1, x: 0 }}
+              transition={{ delay: 0.6, duration: 0.7 }}
+              className="block text-white"
+            >
+              Distribución mayorista de
+            </motion.span>
+            <motion.span
+              initial={{ opacity: 0, x: 40, filter: "blur(10px)" }}
+              animate={{ opacity: 1, x: 0, filter: "blur(0px)" }}
+              transition={{ delay: 0.9, duration: 0.9, ease: "easeOut" }}
+              className="hero-blue-gradient block drop-shadow-[0_4px_24px_rgba(0,0,0,0.7)]"
+              style={{ backgroundSize: "200% 200%" }}
+            >
+              autopartes en Honduras
+            </motion.span>
           </motion.h1>
 
-
-          <motion.p initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.8 }} className="text-white text-base md:text-lg max-w-xl leading-relaxed mb-4 [text-shadow:_0_2px_12px_rgba(0,0,0,0.8)]">
+          <motion.p
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: 0.8, duration: 0.7 }}
+            className="text-white text-base md:text-lg max-w-xl leading-relaxed mb-4 [text-shadow:_0_2px_12px_rgba(0,0,0,0.8)]"
+          >
             Más de 7 años abasteciendo tiendas de autopartes con stock continuo, precios competitivos y entregas inmediatas.
           </motion.p>
 
-          <motion.p initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ delay: 1 }} className="hero-blue-gradient text-xl md:text-2xl font-display font-bold italic mb-10">
+          <motion.p
+            initial={{ opacity: 0, scale: 0.96, y: 12 }}
+            animate={{ opacity: 1, scale: 1, y: 0 }}
+            transition={{ delay: 1, duration: 0.8, ease: "easeOut" }}
+            className="hero-blue-gradient text-xl md:text-2xl font-display font-bold italic mb-10"
+            style={{ textShadow: "0 0 24px rgba(125, 211, 252, 0.38)" }}
+          >
             "{COMPANY.slogan}"
           </motion.p>
 
           <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 1.2 }} className="flex flex-col gap-3">
             <div className="flex flex-wrap gap-4">
-              <a href={COMPANY.whatsapp} target="_blank" rel="noopener noreferrer" className="btn-brand px-8 py-4 rounded-sm font-display text-base flex items-center gap-3">
+              <motion.a
+                href={COMPANY.whatsapp}
+                target="_blank"
+                rel="noopener noreferrer"
+                whileHover={{ scale: 1.03, y: -2 }}
+                whileTap={{ scale: 0.98 }}
+                className="btn-brand px-8 py-4 rounded-sm font-display text-base flex items-center gap-3"
+              >
                 <MessageCircle className="w-5 h-5" /> SOLICITAR COTIZACIÓN MAYORISTA
-              </a>
+              </motion.a>
             </div>
-            <span className="text-white/60 text-xs font-display uppercase tracking-wider">Atención exclusiva para clientes B2B</span>
+            <motion.span
+              initial={{ opacity: 0, letterSpacing: "0.2em" }}
+              animate={{ opacity: 1, letterSpacing: "0.12em" }}
+              transition={{ delay: 1.4, duration: 0.7 }}
+              className="text-white/60 text-xs font-display uppercase tracking-wider"
+            >
+              Atención exclusiva para clientes B2B
+            </motion.span>
           </motion.div>
         </div>
       </motion.div>

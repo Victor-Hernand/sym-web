@@ -204,11 +204,28 @@
 
   /* === HERO BLUE GRADIENT (bright, contrasts on dark/navy bg) === */
   .hero-blue-gradient {
-    background: linear-gradient(135deg, #7DD3FC, #38BDF8, #BAE6FD);
+    background: linear-gradient(135deg, #dff7ff 0%, #7DD3FC 18%, #38BDF8 39%, #dbeafe 62%, #7DD3FC 100%);
+    background-size: 200% 200%;
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
+    animation: hero-text-glow 4s ease-in-out infinite alternate;
     text-shadow: 0 2px 20px rgba(56, 189, 248, 0.3);
+  }
+
+  @keyframes hero-text-glow {
+    0% {
+      background-position: 0% 50%;
+      filter: drop-shadow(0 0 8px rgba(125, 211, 252, 0.15));
+    }
+    50% {
+      background-position: 100% 50%;
+      filter: drop-shadow(0 0 14px rgba(125, 211, 252, 0.4));
+    }
+    100% {
+      background-position: 0% 50%;
+      filter: drop-shadow(0 0 18px rgba(125, 211, 252, 0.55));
+    }
   }
 
   /* === BRAND LINE === */
