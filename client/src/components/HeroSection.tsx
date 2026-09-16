@@ -67,7 +67,7 @@ export default function HeroSection() {
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.5, duration: 0.8, ease: "easeOut" }}
-            className="font-display font-black text-4xl sm:text-5xl md:text-6xl lg:text-7xl leading-[1] mb-6 [text-shadow:_0_4px_24px_rgba(0,0,0,0.7)]"
+            className="font-display font-black uppercase text-4xl sm:text-5xl md:text-6xl lg:text-7xl leading-[1] mb-6 [text-shadow:_0_4px_24px_rgba(0,0,0,0.7)]"
           >
             <motion.span
               initial={{ opacity: 0, x: -30 }}
