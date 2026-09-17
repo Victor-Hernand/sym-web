@@ -43,7 +43,7 @@ export default function WhyUsSection() {
                   transition={{ duration: 0.4, delay: 0.3 + i * 0.08 }}
                   className="bg-white border border-[#1B3A6B]/8 shadow-sm p-4 rounded-sm card-shine group hover:border-brand-blue-light/25 hover-lift"
                 >
-                  <div className="flex items-start gap-3">
+                  <div className="flex flex-col items-center gap-3 text-center">
                     <div className="w-9 h-9 bg-[#1B3A6B]/8 group-hover:bg-[#1B3A6B]/12 flex items-center justify-center shrink-0 rounded-sm transition-all">
                       <adv.icon className="w-4 h-4 text-brand-blue-light group-hover:scale-125 transition-transform duration-300" />
                     </div>

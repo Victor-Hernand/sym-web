@@ -20,6 +20,16 @@ export default function CoverageSection() {
         <img src={IMAGES.realConductorCamion} alt="Entrega nacional de autopartes" className="w-full h-full object-cover" />
         <div className="absolute inset-0 bg-gradient-to-t from-[#0E2240] via-[#0E2240]/85 to-[#0E2240]/40" />
 
+        {/* Logo decorativo */}
+        <motion.img
+          src={IMAGES.logo}
+          alt="Logo S&M"
+          initial={{ opacity: 0, scale: 0.8 }}
+          animate={{ opacity: 0.5 }}
+          transition={{ duration: 0.8 }}
+          className="absolute top-4 right-4 sm:top-6 sm:right-6 md:top-8 md:right-8 lg:top-10 lg:right-10 w-40 h-40 sm:w-56 sm:h-56 md:w-72 md:h-72 lg:w-96 lg:h-96 object-contain pointer-events-none drop-shadow-[0_0_80px_rgba(255,255,255,0.8)] md:drop-shadow-[0_0_120px_rgba(255,255,255,1)]"
+        />
+
         <div className="absolute bottom-0 left-0 right-0 pb-16">
           <div className="container">
             <motion.div initial={{ opacity: 0, y: 30 }} animate={isInView ? { opacity: 1, y: 0 } : {}} transition={{ duration: 0.7 }}>
