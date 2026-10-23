@@ -8,26 +8,48 @@ export default function CTASection() {
   const { ref, isInView } = useInView();
 
   return (
-    <section className="relative py-24 overflow-hidden bg-gradient-to-br from-[#0E2240] via-[#1B3A6B] to-[#0E2240]" ref={ref}>
-      <div className="absolute top-0 left-0 w-64 h-64 bg-brand-blue-bright/10 rounded-full blur-3xl" />
-      <div className="absolute bottom-0 right-0 w-96 h-96 bg-brand-blue-bright/10 rounded-full blur-3xl" />
+    <section className="relative py-24 overflow-hidden bg-gradient-to-br from-[#0E2240] via-[#1B3A6B] to-[#0E2240] animate-gradient-shift" ref={ref}>
+      <div className="absolute top-0 left-0 w-64 h-64 bg-brand-blue-bright/10 rounded-full blur-3xl animate-blob" />
+      <div className="absolute bottom-0 right-0 w-96 h-96 bg-brand-blue-bright/10 rounded-full blur-3xl animate-blob [animation-delay:6s]" />
 
       <div className="container relative z-10 text-center">
         <motion.div initial={{ opacity: 0, y: 30 }} animate={isInView ? { opacity: 1, y: 0 } : {}} transition={{ duration: 0.7 }}>
-          <h2 className="font-display font-black text-4xl md:text-5xl lg:text-6xl text-white leading-tight mb-6">
-            ¿Listo para Impulsar<br />su <span className="text-brand-blue-glow">Negocio</span>?
-          </h2>
-          <p className="text-white/65 text-lg md:text-xl max-w-2xl mx-auto mb-10">
+          <motion.h2
+            initial={{ opacity: 0, y: 24 }}
+            animate={isInView ? { opacity: 1, y: 0 } : {}}
+            transition={{ duration: 0.6, delay: 0.1 }}
+            className="font-display font-black text-4xl md:text-5xl lg:text-6xl text-white leading-tight mb-6"
+          >
+            ¿Listo para Impulsar<br />su{" "}
+            <motion.span
+              className="text-brand-blue-glow inline-block"
+              animate={isInView ? { scale: [1, 1.06, 1] } : {}}
+              transition={{ duration: 2.4, repeat: Infinity, ease: "easeInOut", delay: 1 }}
+            >
+              Negocio
+            </motion.span>?
+          </motion.h2>
+          <motion.p
+            initial={{ opacity: 0, y: 18 }}
+            animate={isInView ? { opacity: 1, y: 0 } : {}}
+            transition={{ duration: 0.6, delay: 0.25 }}
+            className="text-white/65 text-lg md:text-xl max-w-2xl mx-auto mb-10"
+          >
             Cientos de distribuidoras confían en Inversiones S&M por su stock constante, precios competitivos y entregas confiables.
-          </p>
-          <div className="flex flex-wrap justify-center gap-4">
-            <a href={COMPANY.whatsapp} target="_blank" rel="noopener noreferrer" className="bg-white text-[#1B3A6B] font-bold uppercase tracking-wider px-10 py-4 rounded-sm font-display text-base flex items-center gap-3 hover:bg-white/90 hover:shadow-lg transition-all">
+          </motion.p>
+          <motion.div
+            initial={{ opacity: 0, y: 18 }}
+            animate={isInView ? { opacity: 1, y: 0 } : {}}
+            transition={{ duration: 0.6, delay: 0.4 }}
+            className="flex flex-wrap justify-center gap-4"
+          >
+            <motion.a whileHover={{ scale: 1.04, y: -3 }} whileTap={{ scale: 0.97 }} href={COMPANY.whatsapp} target="_blank" rel="noopener noreferrer" className="bg-white text-[#1B3A6B] font-bold uppercase tracking-wider px-10 py-4 rounded-sm font-display text-base flex items-center gap-3 hover:bg-white/90 hover:shadow-lg transition-all">
               <MessageCircle className="w-5 h-5" /> COTIZAR POR WHATSAPP (B2B)
-            </a>
-            <a href={`tel:${COMPANY.phone.replace(/\s/g, "")}`} className="border-2 border-white/40 text-white font-semibold uppercase tracking-wider px-10 py-4 rounded-sm font-display text-base flex items-center gap-3 hover:bg-white/10 hover:border-white/60 transition-all">
+            </motion.a>
+            <motion.a whileHover={{ scale: 1.04, y: -3 }} whileTap={{ scale: 0.97 }} href={`tel:${COMPANY.phone.replace(/\s/g, "")}`} className="border-2 border-white/40 text-white font-semibold uppercase tracking-wider px-10 py-4 rounded-sm font-display text-base flex items-center gap-3 hover:bg-white/10 hover:border-white/60 transition-all">
               <Phone className="w-5 h-5" /> LLAMAR A UN ASESOR COMERCIAL
-            </a>
-          </div>
+            </motion.a>
+          </motion.div>
           <p className="text-white/50 text-sm mt-8">
             {COMPANY.phone} · {COMPANY.address}, {COMPANY.city}
           </p>

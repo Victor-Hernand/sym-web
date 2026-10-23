@@ -14,11 +14,15 @@ function StatCard({ value, suffix, label, index }: { value: number; suffix: stri
       initial={{ opacity: 0, y: 30 }}
       animate={isInView ? { opacity: 1, y: 0 } : {}}
       transition={{ duration: 0.6, delay: index * 0.15 }}
-      className="relative text-center group"
+      className="relative text-center group cursor-default"
     >
-      <div className="blue-gradient font-display font-black text-5xl md:text-6xl lg:text-7xl leading-none">
+      <motion.div
+        animate={isInView ? { scale: [0.85, 1.05, 1] } : {}}
+        transition={{ duration: 0.7, delay: index * 0.15, ease: "easeOut" }}
+        className="blue-gradient font-display font-black text-5xl md:text-6xl lg:text-7xl leading-none group-hover:scale-105 transition-transform duration-300"
+      >
         {count.toLocaleString("en-US")}{suffix}
-      </div>
+      </motion.div>
       <div className="mt-3 font-display font-semibold text-sm md:text-base uppercase tracking-widest text-sym-charcoal/50">
         {label}
       </div>

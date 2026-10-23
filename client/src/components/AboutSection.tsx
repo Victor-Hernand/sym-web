@@ -30,7 +30,7 @@ export default function AboutSection() {
           <motion.div initial={{ opacity: 0, x: 40 }} animate={isInView ? { opacity: 1, x: 0 } : {}} transition={{ duration: 0.8, delay: 0.2 }}>
             <span className="section-label">Quiénes Somos</span>
             <h2 className="font-display font-black text-4xl md:text-5xl text-[#1B3A6B] mt-4 mb-6 leading-tight">
-              Importadores y distribuidores <span className="blue-gradient">mayoristas de autopartes</span>
+              Importadores Y Distribuidores <span className="blue-gradient">Mayoristas De Autopartes</span>
             </h2>
             <p className="text-[#1B3A6B]/60 leading-relaxed mb-8">
               Inversiones S&M es una empresa hondureña especializada en la importación y distribución mayorista de autopartes, orientada exclusivamente al mercado B2B.

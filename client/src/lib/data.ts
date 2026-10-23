@@ -11,7 +11,7 @@ export const COMPANY = {
   slogan: "Ganando Tú, Ganamos Nosotros",
   tagline: "Distribución mayorista de autopartes en Honduras. Precios mayoristas y asesoría especializada para distribuidores.",
   phone: "+504 9210-9620",
-  email: "inversionescastro19@gmail.com",
+  email: "ventas@sym.com",
   address: "Boulevard Comunidad Económica Europea, frente a Plaza Aire Frío",
   city: "Tegucigalpa, Honduras",
   schedule: "Lunes a Viernes: 8:00 AM - 5:00 PM | Sábados: 8:00 AM - 12:00 PM",
@@ -20,6 +20,8 @@ export const COMPANY = {
   facebook: "https://www.facebook.com/invsym/?locale=es_LA",
   instagram: "https://www.instagram.com/inversiones.sym_hn/",
   tiktok: "https://www.tiktok.com/@inversionessym",
+  linkedin: "https://www.linkedin.com/company/caphn/posts/?feedView=all",
+  careersApply: "https://recruit.capgrupo.com/aplicar",
 };
 
 export const IMAGES = {
@@ -55,7 +57,7 @@ export const IMAGES = {
   promoMutekiKitTiempo: "/images/promo-muteki-kit-tiempo.jpg",
   promoWagnerIluminacion: "/images/promo-wagner-iluminacion.jpg",
   promoWelmetBufas: "/images/promo-welmet-bufas.jpg",
-  heroBanner: "/images/hero-banner.png",
+  heroBanner: "/images/hero-bodega-sym-3.jpg",
 };
 
 export type Category = {
@@ -77,6 +79,9 @@ export const CATEGORIES: Category[] = [
   { name: "Eléctricos", icon: "Zap", items: ["Baterías", "Alternadores", "Arrancadores", "Sensores", "Relés", "Iluminación"], percentage: 90, image: IMAGES.promoWagnerIluminacion, imageAlt: "Iluminación automotriz WAGNER distribuida por Inversiones S&M" },
   { name: "Refrigeración", icon: "Thermometer", items: ["Radiadores", "Ventiladores", "Termostatos", "Bombas de agua", "Blower motor"], percentage: 90, image: IMAGES.promoWelmetRadiadores, imageAlt: "Radiadores WELMET distribuidos por Inversiones S&M" },
   { name: "Rodamientos", icon: "Circle", items: ["De rueda", "De caja", "De diferencial", "Bufas", "Industriales"], percentage: 85, image: IMAGES.promoWelmetBufas, imageAlt: "Bufas (mazas de rueda) WELMET distribuidas por Inversiones S&M" },
+  { name: "Filtros", icon: "Filter", items: ["De aceite", "De combustible", "De aire", "De cabina", "De transmisión"], percentage: 95 },
+  { name: "Fluidos y Aditivos", icon: "Droplets", items: ["Aceites de motor", "Fluidos de transmisión", "Líquidos de frenos", "Refrigerantes", "Aditivos"], percentage: 90 },
+  { name: "Accesorios", icon: "Lightbulb", items: ["Espejos", "Faros", "Stops", "Direccionales", "Limpiaparabrisas", "Bocinas"], percentage: 85 },
 ];
 
 export const BRANDS = [
@@ -93,7 +98,8 @@ export const PROCESS_STEPS = [
   { step: 3, title: "Levantamiento de Pedido", description: "Con base en tus necesidades, el asesor levanta un pedido detallado con todas las autopartes necesarias." },
   { step: 4, title: "Confirmación del Pedido", description: "Confirmas el pedido con tu asesor, incluyendo productos solicitados y costo total." },
   { step: 5, title: "Entrega Rápida", description: "Tu paquete es preparado y enviado. Lo recibirás al día siguiente en las instalaciones de tu empresa." },
-  { step: 6, title: "Factura al Crédito", description: "Recibirás la factura correspondiente, alineada con tu línea de crédito aprobada." },
+  { step: 6, title: "Factura al Crédito", description: "Junto con tu paquete recibirás la factura correspondiente, alineada con tu línea de crédito aprobada. Todo transparente y documentado." },
+  { step: 7, title: "Pago según Línea de Crédito", description: "Pagas según los términos de tu línea de crédito previamente acordada. Trabajamos contigo para establecer condiciones que se ajusten a tu flujo de caja." },
 ];
 
 export const VALUES = [
@@ -106,7 +112,7 @@ export const VALUES = [
 export const STATS = [
   { value: 7, suffix: "+", label: "Años abasteciendo negocios automotrices" },
   { value: 10000, suffix: "+", label: "SKU disponibles" },
-  { value: 22, suffix: "+", label: "Marcas disponibles" },
+  { value: 33, suffix: "", label: "Marcas disponibles" },
   { value: 100, suffix: "%", label: "Cobertura Nacional" },
 ];
 
@@ -173,5 +179,73 @@ export const FEATURED_PRODUCTS: FeaturedProduct[] = [
     description: "Motores de ventilación con flujo de aire estable y durabilidad probada, para la línea de climatización más buscada en taller.",
     image: IMAGES.promoWelmetBlowerMotor,
     imageAlt: "Blower motor WELMET para sistema de climatización, distribuido por Inversiones S&M",
+  },
+];
+
+// ============================================================
+// PROPUESTA DE VALOR — filosofía + pilares diferenciadores
+// ============================================================
+export const VALUE_PHILOSOPHY = {
+  quote: "Ganando Tú, Ganamos Nosotros",
+  paragraphs: [
+    "Esta filosofía define nuestra relación con los clientes. No nos vemos como un simple proveedor, sino como un socio estratégico cuyo éxito está directamente vinculado al éxito de nuestros clientes. Cuando tú creces, nosotros crecemos. Cuando tú prosperas, nosotros prosperamos.",
+    "Esta mentalidad se refleja en cada decisión que tomamos: desde la selección de productos que realmente se venden, hasta la flexibilidad en condiciones de crédito que permiten a nuestros clientes mantener un flujo de caja saludable, pasando por la asesoría honesta que prioriza las necesidades del cliente sobre la venta inmediata.",
+  ],
+};
+
+export const VALUE_PILLARS = [
+  {
+    icon: "Boxes",
+    title: "Amplio Inventario y Disponibilidad Constante",
+    description:
+      "Contamos con un inventario robusto que abarca las autopartes más demandadas en Honduras, garantizando que nuestros clientes operen sin interrupciones y aprovechen oportunidades de venta al instante. Gracias a nuestra capacidad de importación directa, reponemos stock rápidamente y anticipamos demandas estacionales, asegurando acceso continuo a los productos que necesitan.",
+  },
+  {
+    icon: "UserCheck",
+    title: "Asesoría Personalizada y Acompañamiento Continuo",
+    description:
+      "Nuestro equipo de asesores actúa como consultores estratégicos, ayudando a optimizar inventarios, identificar oportunidades de crecimiento y resolver desafíos operativos. Realizamos visitas regulares, capacitamos sobre productos, compartimos información de mercado y brindamos soporte rápido y eficiente, generando valor más allá del producto.",
+  },
+  {
+    icon: "BadgeDollarSign",
+    title: "Precios Competitivos y Condiciones Flexibles",
+    description:
+      "Al operar como importadores directos, eliminamos intermediarios y trasladamos los ahorros a nuestros clientes. Ofrecemos precios competitivos que protegen sus márgenes y líneas de crédito flexibles que facilitan la gestión del flujo de caja, permitiendo invertir en inventario sin comprometer la liquidez operativa.",
+  },
+];
+
+// ============================================================
+// NUESTROS ASESORES DE VENTA B2B
+// ============================================================
+export const ADVISOR_BENEFITS = [
+  {
+    icon: "Handshake",
+    title: "Atención Personalizada",
+    description:
+      "Nuestros asesores se toman el tiempo para entender a fondo tu negocio, tus necesidades específicas y tus desafíos. Realizan visitas periódicas para mantener una comunicación constante.",
+  },
+  {
+    icon: "Lightbulb",
+    title: "Asesoramiento Idóneo",
+    description:
+      "Te ayudan a seleccionar las autopartes más adecuadas para tus operaciones, considerando calidad, costo y disponibilidad, e informándote sobre las últimas tendencias del mercado.",
+  },
+  {
+    icon: "ClipboardList",
+    title: "Soporte en Ventas",
+    description:
+      "Realizan el levantamiento de pedidos directamente en tu empresa y te aconsejan sobre el manejo de inventarios, ayudando a optimizar tu stock y prevenir faltantes.",
+  },
+  {
+    icon: "LifeBuoy",
+    title: "Resolución de Problemas",
+    description:
+      "Ante cualquier incidencia con productos o entregas, resuelven de manera rápida y eficiente, con seguimiento postventa para asegurar que lo adquirido cumpla tus expectativas.",
+  },
+  {
+    icon: "TrendingUp",
+    title: "Relación B2B Sostenible",
+    description:
+      "Fomentan una relación de confianza a largo plazo, ajustando condiciones de crédito y pago según la evolución de tus necesidades para una colaboración fluida.",
   },
 ];

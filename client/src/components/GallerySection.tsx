@@ -2,7 +2,7 @@
 import Lightbox from "@/components/Lightbox";
 import { useInView } from "@/hooks/useInView";
 import { IMAGES } from "@/lib/data";
-import { motion } from "framer-motion";
+import { motion, useReducedMotion } from "framer-motion";
 import { useState } from "react";
 
 const galleryItems = [
@@ -19,6 +19,69 @@ const galleryItems = [
   { src: IMAGES.realWagnerPastillas, alt: "Marcas premium en stock continuo", caption: "Marcas premium en stock" },
   { src: IMAGES.realEquipoFilas, alt: "Equipo WELMET", caption: "Equipo WELMET" },
 ];
+
+const EASE = [0.22, 1, 0.36, 1] as const;
+
+type GalleryItem = (typeof galleryItems)[number];
+
+// Cada tarjeta observa su propia visibilidad. El contenedor observado no se recorta:
+// con clip-path al 100% IntersectionObserver nunca lo detectaría en pantalla.
+function GalleryCard({ item, index: i, onOpen }: { item: GalleryItem; index: number; onOpen: () => void }) {
+  const { ref, isInView } = useInView();
+  const reduceMotion = useReducedMotion();
+  const tall = i === 0 || i === 3;
+  const delay = (i % 4) * 0.12;
+  const state = isInView ? "visible" : "hidden";
+
+  return (
+    <motion.div
+      ref={ref}
+      initial="hidden"
+      animate={state}
+      whileHover={reduceMotion ? undefined : { y: -6 }}
+      variants={{
+        hidden: reduceMotion ? { opacity: 0 } : { opacity: 0, y: 60 },
+        visible: { opacity: 1, y: 0, transition: { duration: 0.9, ease: EASE, delay } },
+      }}
+      className={`cursor-pointer group ${tall ? "md:row-span-2" : ""}`}
+      onClick={onOpen}
+    >
+      <motion.div
+        variants={{
+          hidden: reduceMotion ? {} : { clipPath: "inset(100% 0% 0% 0%)" },
+          visible: { clipPath: "inset(0% 0% 0% 0%)", transition: { duration: 0.9, ease: EASE, delay } },
+        }}
+        className="relative h-full overflow-hidden rounded-sm shadow-sm group-hover:shadow-xl group-hover:shadow-brand-blue/20 transition-shadow duration-500"
+      >
+        <motion.div
+          className="h-full"
+          variants={{
+            hidden: reduceMotion ? {} : { scale: 1.35 },
+            visible: { scale: 1, transition: { duration: 1.6, ease: EASE, delay } },
+          }}
+        >
+          <img
+            src={item.src}
+            alt={item.alt}
+            className={`w-full object-cover group-hover:scale-110 transition-transform duration-700 ${
+              tall ? "h-full min-h-[300px]" : "h-48 md:h-52"
+            }`}
+          />
+        </motion.div>
+        {/* Brillo diagonal al pasar el cursor */}
+        <div className="pointer-events-none absolute inset-0 -translate-x-full group-hover:translate-x-full transition-transform duration-1000 ease-out bg-gradient-to-r from-transparent via-white/25 to-transparent" />
+        {item.caption && (
+          <>
+            <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+            <div className="absolute bottom-0 left-0 right-0 p-4 translate-y-full group-hover:translate-y-0 transition-transform duration-300">
+              <span className="text-brand-blue-light font-display font-bold text-xs uppercase tracking-wider">{item.caption}</span>
+            </div>
+          </>
+        )}
+      </motion.div>
+    </motion.div>
+  );
+}
 
 export default function GallerySection() {
   const { ref, isInView } = useInView();
@@ -38,32 +101,12 @@ export default function GallerySection() {
         {/* Masonry-style grid */}
         <div className="grid grid-cols-2 md:grid-cols-4 gap-3">
           {galleryItems.map((item, i) => (
-            <motion.div
+            <GalleryCard
               key={`${item.alt}-${i}`}
-              initial={{ opacity: 0, y: 20 }}
-              animate={isInView ? { opacity: 1, y: 0 } : {}}
-              transition={{ delay: 0.1 + i * 0.06 }}
-              className={`relative overflow-hidden rounded-sm cursor-pointer group ${
-                i === 0 || i === 3 ? "md:row-span-2" : ""
-              }`}
-              onClick={() => setLightbox(i)}
-            >
-              <img
-                src={item.src}
-                alt={item.alt}
-                className={`w-full object-cover group-hover:scale-105 transition-transform duration-700 ${
-                  i === 0 || i === 3 ? "h-full min-h-[300px]" : "h-48 md:h-52"
-                }`}
-              />
-              {item.caption && (
-                <>
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
-                  <div className="absolute bottom-0 left-0 right-0 p-4 translate-y-full group-hover:translate-y-0 transition-transform duration-300">
-                    <span className="text-brand-blue-light font-display font-bold text-xs uppercase tracking-wider">{item.caption}</span>
-                  </div>
-                </>
-              )}
-            </motion.div>
+              item={item}
+              index={i}
+              onOpen={() => setLightbox(i)}
+            />
           ))}
         </div>
       </div>
