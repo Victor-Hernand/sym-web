@@ -10,7 +10,7 @@ export default function AboutSection() {
   const { ref, isInView } = useInView();
 
   return (
-    <section id="nosotros" className="py-24 md:py-32 bg-light-bg relative overflow-hidden noise-overlay" ref={ref}>
+    <section id="nosotros" className="pt-12 md:pt-16 pb-6 md:pb-8 bg-light-bg relative overflow-hidden noise-overlay" ref={ref}>
       <div className="container relative z-10">
         <div className="grid lg:grid-cols-2 gap-16 items-center">
           <motion.div initial={{ opacity: 0, x: -40 }} animate={isInView ? { opacity: 1, x: 0 } : {}} transition={{ duration: 0.8 }} className="relative">

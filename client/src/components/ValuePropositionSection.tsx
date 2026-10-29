@@ -10,16 +10,16 @@ export default function ValuePropositionSection() {
   const { ref, isInView } = useInView();
 
   return (
-    <section id="propuesta" className="py-24 md:py-32 bg-white relative overflow-hidden noise-overlay" ref={ref}>
+    <section id="propuesta" className="py-12 md:py-16 bg-white relative overflow-hidden noise-overlay" ref={ref}>
       <div className="container relative z-10">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={isInView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.7 }}
-          className="text-center max-w-3xl mx-auto"
+          className="text-center max-w-7xl mx-auto"
         >
           <span className="section-label justify-center">Propuesta de Valor</span>
-          <h2 className="font-display font-black text-4xl md:text-5xl text-[#1B3A6B] mt-4 mb-4 leading-tight">
+          <h2 className="font-display font-black text-4xl md:text-5xl text-[#1B3A6B] mt-4 mb-4 leading-tight md:whitespace-nowrap">
             Tres pilares que nos hacen tu <span className="blue-gradient">aliado estratégico</span>
           </h2>
           <p className="text-[#1B3A6B]/55 leading-relaxed">
@@ -41,7 +41,7 @@ export default function ValuePropositionSection() {
             </blockquote>
             <div className="space-y-4">
               {VALUE_PHILOSOPHY.paragraphs.map((p) => (
-                <p key={p.slice(0, 24)} className="text-white/75 text-sm md:text-base leading-relaxed">
+                <p key={p.slice(0, 24)} className="text-white/75 text-sm md:text-base leading-relaxed text-justify">
                   {p}
                 </p>
               ))}
@@ -65,7 +65,7 @@ export default function ValuePropositionSection() {
                   <Icon className="w-6 h-6 text-brand-blue-light group-hover:scale-110 group-hover:rotate-6 transition-transform duration-300" />
                 </div>
                 <h3 className="font-display font-bold text-lg text-[#1B3A6B] mt-5 mb-3 leading-snug">{pillar.title}</h3>
-                <p className="text-sm text-[#1B3A6B]/55 leading-relaxed">{pillar.description}</p>
+                <p className="text-sm text-[#1B3A6B]/55 leading-relaxed text-justify">{pillar.description}</p>
               </motion.div>
             );
           })}

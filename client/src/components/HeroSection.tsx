@@ -1,7 +1,7 @@
 // DESIGN: Light Premium — Hero with parallax, particles, brand blue gradient
-import { COMPANY, IMAGES } from "@/lib/data";
+import { COMPANY } from "@/lib/data";
 import { motion, useScroll, useTransform } from "framer-motion";
-import { ArrowDown, MessageCircle } from "lucide-react";
+import { ArrowDown } from "lucide-react";
 import { useRef, useMemo } from "react";
 
 function Particles() {
@@ -48,32 +48,34 @@ export default function HeroSection() {
   const opacity = useTransform(scrollYProgress, [0, 0.5], [1, 0]);
 
   return (
-    <section id="inicio" ref={ref} className="relative min-h-screen flex items-center overflow-hidden noise-overlay">
-      <div className="absolute inset-0 z-0">
-        <img src={IMAGES.heroBanner} alt="Bodega de autopartes Inversiones S&M" className="w-full h-full object-cover object-center" />
-        <div className="absolute inset-0 bg-gradient-to-r from-black/85 via-black/55 to-black/25" />
-      </div>
+    <section id="inicio" ref={ref} className="relative flex items-center overflow-hidden noise-overlay bg-[#0E2240]">
+      <div
+        aria-hidden="true"
+        className="absolute inset-0 pointer-events-none mix-blend-multiply"
+        style={{
+          backgroundImage: 'url("/images/hero-ondas.jpg")',
+          backgroundSize: "480px auto",
+          backgroundRepeat: "repeat",
+          maskImage: "linear-gradient(to bottom, black 20%, transparent 100%)",
+          WebkitMaskImage: "linear-gradient(to bottom, black 20%, transparent 100%)",
+        }}
+      />
 
       <Particles />
 
-      <motion.div className="container relative z-20 pt-24 pb-16 max-lg:pl-2 max-lg:pr-4" style={{ y: textY, opacity }}>
-        <div className="max-w-3xl">
-          <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.3 }} className="glass-blue inline-flex items-center gap-2 px-5 py-2.5 mb-8 rounded-sm">
-            <span className="w-2 h-2 rounded-full bg-brand-blue animate-pulse" />
-            <span className="text-white text-xs font-display font-bold uppercase tracking-[0.2em]">Distribución mayorista de autopartes en Honduras</span>
-          </motion.div>
-
+      <motion.div className="container relative z-20 pt-24 pb-28 max-lg:pl-2 max-lg:pr-4" style={{ y: textY, opacity }}>
+        <div className="max-w-6xl mx-auto text-center">
           <motion.h1
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.5, duration: 0.8, ease: "easeOut" }}
-            className="font-display font-black uppercase text-4xl sm:text-5xl md:text-6xl lg:text-7xl leading-[1] mb-6 [text-shadow:_0_4px_24px_rgba(0,0,0,0.7)]"
+            className="font-display font-black uppercase leading-[1] mb-6 [text-shadow:_0_4px_24px_rgba(0,0,0,0.7)] text-[min(4.25rem,calc((100vw-4rem)/16.4))]"
           >
             <motion.span
               initial={{ opacity: 0, x: -30 }}
               animate={{ opacity: 1, x: 0 }}
               transition={{ delay: 0.6, duration: 0.7 }}
-              className="block text-white"
+              className="block w-max mx-auto whitespace-nowrap text-white"
             >
               Distribución mayorista de
             </motion.span>
@@ -81,7 +83,7 @@ export default function HeroSection() {
               initial={{ opacity: 0, x: 40, filter: "blur(10px)" }}
               animate={{ opacity: 1, x: 0, filter: "blur(0px)" }}
               transition={{ delay: 0.9, duration: 0.9, ease: "easeOut" }}
-              className="hero-blue-gradient block drop-shadow-[0_4px_24px_rgba(0,0,0,0.7)]"
+              className="hero-blue-gradient block w-max mx-auto whitespace-nowrap drop-shadow-[0_4px_24px_rgba(0,0,0,0.7)]"
               style={{ backgroundSize: "200% 200%" }}
             >
               autopartes en Honduras
@@ -92,7 +94,7 @@ export default function HeroSection() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.8, duration: 0.7 }}
-            className="text-white text-base md:text-lg max-w-xl leading-relaxed mb-4 [text-shadow:_0_2px_12px_rgba(0,0,0,0.8)]"
+            className="text-white text-base md:text-lg max-w-3xl mx-auto leading-relaxed mb-4 [text-shadow:_0_2px_12px_rgba(0,0,0,0.8)]"
           >
             Más de 7 años abasteciendo tiendas de autopartes con stock continuo, precios competitivos y entregas inmediatas.
           </motion.p>
@@ -107,19 +109,7 @@ export default function HeroSection() {
             "{COMPANY.slogan}"
           </motion.p>
 
-          <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 1.2 }} className="flex flex-col gap-3">
-            <div className="flex flex-wrap gap-4">
-              <motion.a
-                href={COMPANY.whatsapp}
-                target="_blank"
-                rel="noopener noreferrer"
-                whileHover={{ scale: 1.03, y: -2 }}
-                whileTap={{ scale: 0.98 }}
-                className="btn-brand px-8 py-4 rounded-sm font-display text-base flex items-center gap-3"
-              >
-                <MessageCircle className="w-5 h-5" /> SOLICITAR COTIZACIÓN MAYORISTA
-              </motion.a>
-            </div>
+          <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 1.2 }} className="flex flex-col items-center gap-3">
             <motion.span
               initial={{ opacity: 0, letterSpacing: "0.2em" }}
               animate={{ opacity: 1, letterSpacing: "0.12em" }}
