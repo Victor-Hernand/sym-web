@@ -1,29 +1,38 @@
-// DESIGN: Light Premium — Products with tabs and featured products
+// DESIGN: Light Premium — Products carousel and featured products
 import Lightbox from "@/components/Lightbox";
 import { useInView } from "@/hooks/useInView";
 import { CATEGORIES, COMPANY, FEATURED_PRODUCTS } from "@/lib/data";
 import { motion } from "framer-motion";
-import { Cog, CircleDot, Settings, ArrowUpDown, Zap, Thermometer, Circle, Filter, Droplets, Lightbulb, Star, ArrowRight, MessageCircle, ZoomIn } from "lucide-react";
-import { useMemo, useState } from "react";
+import { Cog, CircleDot, Settings, ArrowUpDown, Zap, Thermometer, Circle, Star, ArrowRight, MessageCircle, ZoomIn, ChevronLeft, ChevronRight } from "lucide-react";
+import { useEffect, useMemo, useState } from "react";
 
-const iconMap: Record<string, React.ElementType> = { Cog, CircleDot, Settings, ArrowUpDown, Zap, Thermometer, Circle, Filter, Droplets, Lightbulb };
+const iconMap: Record<string, React.ElementType> = { Cog, CircleDot, Settings, ArrowUpDown, Zap, Thermometer, Circle };
+
+const AUTOPLAY_MS = 6000;
 
 export default function ProductsSection() {
   const { ref, isInView } = useInView();
   const [activeTab, setActiveTab] = useState(0);
   const category = CATEGORIES[activeTab];
   const [zoomed, setZoomed] = useState(false);
+  const [paused, setPaused] = useState(false);
 
-  // Solo las categorías con flyer entran al visor; guardamos su índice original
-  // para que navegar dentro del visor también cambie la pestaña activa.
+  const count = CATEGORIES.length;
+  const goTo = (i: number) => setActiveTab((i + count) % count);
+
+  // Avance automático del carrusel. Se pausa al pasar el mouse, con el visor abierto
+  // o si el usuario pide menos movimiento; cada cambio manual reinicia el temporizador.
+  useEffect(() => {
+    if (paused || zoomed) return;
+    if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
+    const id = setInterval(() => setActiveTab((t) => (t + 1) % count), AUTOPLAY_MS);
+    return () => clearInterval(id);
+  }, [paused, zoomed, activeTab, count]);
+
   const flyers = useMemo(
-    () =>
-      CATEGORIES.flatMap((cat, i) =>
-        cat.image ? [{ src: cat.image, alt: cat.imageAlt ?? cat.name, caption: cat.name, tabIndex: i }] : [],
-      ),
+    () => CATEGORIES.map((cat, i) => ({ src: cat.image, alt: cat.imageAlt, caption: cat.name, tabIndex: i })),
     [],
   );
-  const zoomIndex = zoomed ? flyers.findIndex((f) => f.tabIndex === activeTab) : -1;
 
   const [featuredZoom, setFeaturedZoom] = useState<number | null>(null);
   const featuredItems = useMemo(
@@ -32,14 +41,14 @@ export default function ProductsSection() {
   );
 
   return (
-    <section id="productos" className="py-24 md:py-32 bg-light-bg relative noise-overlay" ref={ref}>
+    <section id="productos" className="pt-0 pb-6 md:pb-8 bg-light-bg relative noise-overlay" ref={ref}>
       <div className="container relative z-10">
         <motion.div initial={{ opacity: 0, y: 20 }} animate={isInView ? { opacity: 1, y: 0 } : {}} transition={{ duration: 0.6 }} className="text-center mb-16">
           <span className="section-label justify-center">Nuestro Catálogo B2B</span>
           <h2 className="font-display font-black text-4xl md:text-5xl text-[#1B3A6B] mt-4 mb-4">
             Categorías de autopartes para tu <span className="blue-gradient">negocio mayorista</span>
           </h2>
-          <p className="text-[#1B3A6B]/55 max-w-2xl mx-auto">Categorías de alta rotación con stock continuo y marcas líderes para entrega inmediata.</p>
+          <p className="text-[#1B3A6B]/55 md:whitespace-nowrap">Categorías de alta rotación con stock continuo y marcas líderes para entrega inmediata.</p>
         </motion.div>
 
         {/* Category Tabs */}
@@ -49,7 +58,7 @@ export default function ProductsSection() {
             return (
               <motion.button
                 key={cat.name}
-                onClick={() => setActiveTab(i)}
+                onClick={() => goTo(i)}
                 whileHover={{ y: -3, scale: 1.03 }}
                 whileTap={{ scale: 0.96 }}
                 className={`flex items-center gap-2 px-4 py-2.5 rounded-sm font-display font-semibold text-xs uppercase tracking-wider transition-all ${
@@ -66,29 +75,59 @@ export default function ProductsSection() {
         {/* Active Category Detail */}
         <motion.div key={activeTab} initial={{ opacity: 0, y: 15 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.4 }} className="bg-white border border-[#1B3A6B]/10 shadow-md p-8 md:p-12 rounded-sm mb-20">
           <div className="grid grid-cols-1 md:grid-cols-[auto_minmax(0,1fr)] gap-8 md:gap-12 items-center justify-items-center md:justify-items-start">
-            {category.image ? (
-              // Alto fijo y ancho automático: los flyers son 4:5 o cuadrados y
-              // así ninguno queda con franjas vacías a los lados.
+            {/* Carrusel: alto fijo y ancho automático; las fotos quedan sin franjas vacías */}
+            <div
+              className="relative shrink-0 max-w-full"
+              onMouseEnter={() => setPaused(true)}
+              onMouseLeave={() => setPaused(false)}
+            >
               <button
                 type="button"
                 onClick={() => setZoomed(true)}
                 aria-label={`Ampliar imagen de ${category.name}`}
-                className="relative shrink-0 h-80 md:h-[30rem] max-w-full rounded-sm overflow-hidden border border-[#1B3A6B]/10 shadow-md cursor-zoom-in group/flyer focus:outline-none focus-visible:ring-2 focus-visible:ring-brand-blue-light focus-visible:ring-offset-2"
+                className="relative block h-64 md:h-96 max-w-full rounded-sm overflow-hidden border border-[#1B3A6B]/10 shadow-md cursor-zoom-in group/flyer focus:outline-none focus-visible:ring-2 focus-visible:ring-brand-blue-light focus-visible:ring-offset-2"
               >
                 <img
                   src={category.image}
-                  alt={category.imageAlt ?? category.name}
+                  alt={category.imageAlt}
                   className="h-full w-auto max-w-full object-contain group-hover/flyer:scale-[1.04] transition-transform duration-500"
                 />
                 <span className="absolute bottom-3 right-3 flex items-center gap-1.5 bg-[#0f0f14]/70 text-white text-[11px] font-display font-bold uppercase tracking-wider px-2.5 py-1.5 rounded-sm opacity-0 group-hover/flyer:opacity-100 transition-opacity">
                   <ZoomIn className="w-3.5 h-3.5" /> Ampliar
                 </span>
               </button>
-            ) : (
-              <div className="w-20 h-20 bg-[#1B3A6B]/8 flex items-center justify-center rounded-sm shrink-0">
-                {(() => { const Icon = iconMap[category.icon] || Cog; return <Icon className="w-10 h-10 text-brand-blue-light" />; })()}
+
+              <button
+                type="button"
+                onClick={() => goTo(activeTab - 1)}
+                aria-label="Categoría anterior"
+                className="absolute left-2 top-1/2 -translate-y-1/2 w-10 h-10 flex items-center justify-center bg-white/90 border border-[#1B3A6B]/10 shadow-md rounded-sm text-[#1B3A6B] hover:bg-brand-blue hover:text-white transition-colors focus:outline-none focus-visible:ring-2 focus-visible:ring-brand-blue-light"
+              >
+                <ChevronLeft className="w-5 h-5" />
+              </button>
+              <button
+                type="button"
+                onClick={() => goTo(activeTab + 1)}
+                aria-label="Categoría siguiente"
+                className="absolute right-2 top-1/2 -translate-y-1/2 w-10 h-10 flex items-center justify-center bg-white/90 border border-[#1B3A6B]/10 shadow-md rounded-sm text-[#1B3A6B] hover:bg-brand-blue hover:text-white transition-colors focus:outline-none focus-visible:ring-2 focus-visible:ring-brand-blue-light"
+              >
+                <ChevronRight className="w-5 h-5" />
+              </button>
+
+              <div className="flex justify-center gap-2 mt-4">
+                {CATEGORIES.map((cat, i) => (
+                  <button
+                    key={cat.name}
+                    type="button"
+                    onClick={() => goTo(i)}
+                    aria-label={`Mostrar ${cat.name}`}
+                    aria-current={activeTab === i}
+                    className={`h-2.5 rounded-full transition-all ${activeTab === i ? "w-6 bg-brand-blue" : "w-2.5 bg-[#1B3A6B]/20 hover:bg-[#1B3A6B]/40"}`}
+                  />
+                ))}
               </div>
-            )}
+            </div>
+
             <div className="w-full min-w-0 text-center md:text-left">
               <h3 className="font-display font-black text-3xl md:text-4xl text-[#1B3A6B] mb-3">{category.name}</h3>
               <ul className="flex flex-wrap gap-2 justify-center md:justify-start">
@@ -142,9 +181,9 @@ export default function ProductsSection() {
                   type="button"
                   onClick={() => setFeaturedZoom(i)}
                   aria-label={`Ampliar imagen de ${product.name} ${product.brand}`}
-                  className="relative aspect-[4/5] overflow-hidden bg-[#1B3A6B]/5 cursor-zoom-in focus:outline-none focus-visible:ring-2 focus-visible:ring-brand-blue-light focus-visible:ring-inset"
+                  className="relative aspect-[4/3] overflow-hidden bg-[#1B3A6B]/5 cursor-zoom-in focus:outline-none focus-visible:ring-2 focus-visible:ring-brand-blue-light focus-visible:ring-inset"
                 >
-                  <img src={product.image} alt={product.imageAlt} loading="lazy" className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" />
+                  <img src={product.image} alt={product.imageAlt} loading="lazy" className="w-full h-full object-contain p-16 group-hover:scale-105 transition-transform duration-700" />
                   <span className="absolute top-3 right-3 bg-brand-blue/90 text-white text-xs font-display font-bold px-3 py-1 rounded-sm flex items-center gap-1">
                     <Star className="w-3 h-3" /> {product.tag}
                   </span>
@@ -182,8 +221,8 @@ export default function ProductsSection() {
 
       <Lightbox
         items={flyers}
-        index={zoomIndex >= 0 ? zoomIndex : null}
-        onIndexChange={(i) => setActiveTab(flyers[i].tabIndex)}
+        index={zoomed ? activeTab : null}
+        onIndexChange={(i) => goTo(i)}
         onClose={() => setZoomed(false)}
       />
     </section>

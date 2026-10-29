@@ -4,10 +4,13 @@ import { Phone, Mail, Clock, Menu, X, MessageCircle, Facebook, Instagram } from 
 import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import TikTokIcon from "@/components/icons/TikTokIcon";
+import { useLocation } from "wouter";
+import { goToNavItem } from "@/lib/nav";
 
 export default function Navbar() {
   const [scrolled, setScrolled] = useState(false);
   const [mobileOpen, setMobileOpen] = useState(false);
+  const [location, navigate] = useLocation();
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 50);
@@ -17,8 +20,7 @@ export default function Navbar() {
 
   const handleNavClick = (href: string) => {
     setMobileOpen(false);
-    const el = document.querySelector(href);
-    if (el) el.scrollIntoView({ behavior: "smooth" });
+    goToNavItem(href, navigate, location);
   };
 
   return (
@@ -43,7 +45,7 @@ export default function Navbar() {
       {/* Main Nav */}
       <header className={`sticky top-0 z-50 transition-all duration-500 ${scrolled ? "glass shadow-2xl shadow-brand-blue/10" : "bg-light-surface/80 backdrop-blur-sm"}`}>
         <div className="container py-3 flex items-center justify-between">
-          <a href="#inicio" className="flex items-center gap-3 group">
+          <a href="/" className="flex items-center gap-3 group">
             <img src={IMAGES.logo} alt="Inversiones S&M" className="h-16 md:h-20 w-auto object-contain" />
           </a>
 

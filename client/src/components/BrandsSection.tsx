@@ -10,14 +10,14 @@ export default function BrandsSection() {
   const secondRow = BRANDS.slice(Math.ceil(BRANDS.length / 2));
 
   return (
-    <section id="marcas" className="py-24 md:py-32 bg-light-surface relative overflow-hidden border-y border-brand-blue/8" ref={ref}>
-      <div className="container relative z-10 mb-14">
+    <section id="marcas" className="pt-12 md:pt-16 pb-6 md:pb-8 bg-light-surface relative overflow-hidden border-y border-brand-blue/8" ref={ref}>
+      <div className="container relative z-10 mb-8">
         <motion.div initial={{ opacity: 0, y: 20 }} animate={isInView ? { opacity: 1, y: 0 } : {}} transition={{ duration: 0.6 }} className="text-center">
           <span className="section-label justify-center">Nuestras Marcas</span>
           <h2 className="font-display font-black text-4xl md:text-5xl text-[#1B3A6B] mt-4 mb-4">
             Marcas líderes que garantizan <span className="blue-gradient">rotación y respaldo</span>
           </h2>
-          <p className="text-[#1B3A6B]/55 max-w-2xl mx-auto">Trabajamos con las marcas más reconocidas del mercado internacional, garantizando calidad, confiabilidad y respaldo técnico. Nuestro portafolio incluye marcas líderes en cada categoría, seleccionadas por su reputación, disponibilidad y relación calidad-precio.</p>
+          <p className="text-[#1B3A6B]/55 mx-auto">Trabajamos con las marcas más reconocidas del mercado internacional, garantizando calidad, confiabilidad y respaldo técnico. Nuestro portafolio incluye marcas líderes en cada categoría, seleccionadas por su reputación, disponibilidad y relación calidad-precio.</p>
         </motion.div>
       </div>
 
@@ -25,8 +25,8 @@ export default function BrandsSection() {
       <div className="relative mb-4 overflow-hidden">
         <div className="flex animate-marquee whitespace-nowrap">
           {[...firstRow, ...firstRow, ...firstRow].map((brand, i) => (
-            <div key={`r1-${i}`} className="inline-flex items-center justify-center mx-3 px-8 py-4 bg-white border border-[#1B3A6B]/8 shadow-sm hover:border-brand-blue-light/30 rounded-sm hover-lift shrink-0 group">
-              <span className="font-display font-bold text-sm uppercase tracking-wider text-[#1B3A6B]/40 group-hover:text-brand-blue-light transition-colors whitespace-nowrap">{brand}</span>
+            <div key={`r1-${i}`} className="inline-flex items-center justify-center mx-2 px-5 py-2.5 bg-white border border-[#1B3A6B]/8 shadow-sm hover:border-brand-blue-light/30 rounded-sm hover-lift shrink-0 group">
+              <span className="font-display font-bold text-xs uppercase tracking-wider text-[#1B3A6B]/40 group-hover:text-brand-blue-light transition-colors whitespace-nowrap">{brand}</span>
             </div>
           ))}
         </div>
@@ -36,14 +36,14 @@ export default function BrandsSection() {
       <div className="relative overflow-hidden">
         <div className="flex animate-marquee-reverse whitespace-nowrap">
           {[...secondRow, ...secondRow, ...secondRow].map((brand, i) => (
-            <div key={`r2-${i}`} className="inline-flex items-center justify-center mx-3 px-8 py-4 bg-white border border-[#1B3A6B]/8 shadow-sm hover:border-brand-blue-light/30 rounded-sm hover-lift shrink-0 group">
-              <span className="font-display font-bold text-sm uppercase tracking-wider text-[#1B3A6B]/40 group-hover:text-brand-blue-light transition-colors whitespace-nowrap">{brand}</span>
+            <div key={`r2-${i}`} className="inline-flex items-center justify-center mx-2 px-5 py-2.5 bg-white border border-[#1B3A6B]/8 shadow-sm hover:border-brand-blue-light/30 rounded-sm hover-lift shrink-0 group">
+              <span className="font-display font-bold text-xs uppercase tracking-wider text-[#1B3A6B]/40 group-hover:text-brand-blue-light transition-colors whitespace-nowrap">{brand}</span>
             </div>
           ))}
         </div>
       </div>
 
-      <div className="container relative z-10 mt-12 flex flex-wrap justify-center gap-4">
+      <div className="container relative z-10 mt-8 flex flex-wrap justify-center gap-4">
         <a
           href={`${COMPANY.whatsapp}?text=${encodeURIComponent("Hola, deseo solicitar el catálogo por marcas.")}`}
           target="_blank"
