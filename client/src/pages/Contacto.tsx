@@ -34,7 +34,7 @@ const CLIENT_TYPES = [
 const inputClass = "w-full bg-white border border-[#1B3A6B]/12 text-[#1B3A6B] px-4 py-3 rounded-sm text-sm focus:border-brand-blue-light/50 focus:outline-none focus:ring-1 focus:ring-brand-blue/20 transition-all placeholder:text-[#1B3A6B]/30";
 
 export default function Contacto() {
-  const [formData, setFormData] = useState({ name: "", company: "", clientType: "", phone: "", email: "", message: "" });
+  const [formData, setFormData] = useState({ name: "", company: "", clientType: "", phone: "", email: "", message: "", privacyAccepted: false });
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
@@ -126,10 +126,21 @@ export default function Contacto() {
                     <label className="text-[#1B3A6B]/55 text-xs font-display font-semibold uppercase tracking-wider mb-2 block">Mensaje / Productos *</label>
                     <textarea required rows={4} value={formData.message} onChange={(e) => setFormData({ ...formData, message: e.target.value })} className={`${inputClass} resize-none`} placeholder="Describa los productos que necesita o el tipo de negocio al que pertenece." />
                   </div>
-                  <button type="submit" className="btn-brand w-full py-4 rounded-sm font-display text-sm flex items-center justify-center gap-3">
+                  <label className="flex items-start gap-3 text-sm text-[#1B3A6B]/70 cursor-pointer">
+                    <input type="checkbox" required checked={formData.privacyAccepted} onChange={(e) => setFormData({ ...formData, privacyAccepted: e.target.checked })} className="mt-1 w-4 h-4 accent-[#1B3A6B] shrink-0" />
+                    <span>
+                      He leído y acepto el{" "}
+                      <a href="/privacidad" target="_blank" rel="noopener noreferrer" className="underline hover:text-brand-blue-light transition-colors">aviso de privacidad</a>{" "}
+                      y autorizo el uso de mis datos para atender esta solicitud. *
+                    </span>
+                  </label>
+                  <button type="submit" disabled={!formData.privacyAccepted} className="btn-brand w-full py-4 rounded-sm font-display text-sm flex items-center justify-center gap-3 disabled:opacity-40 disabled:cursor-not-allowed">
                     <Send className="w-4 h-4" /> ENVIAR SOLICITUD DE COTIZACIÓN
                   </button>
-                  <p className="text-[#1B3A6B]/30 text-xs text-center">Al enviar, será redirigido a WhatsApp con su mensaje pre-cargado.</p>
+                  <p className="text-[#1B3A6B]/30 text-xs text-center">
+                    Al enviar, será redirigido a WhatsApp con su mensaje pre-cargado. Consulte nuestra{" "}
+                    <a href="/privacidad" className="underline hover:text-brand-blue-light transition-colors">política de privacidad</a>.
+                  </p>
                 </form>
               </div>
             </div>

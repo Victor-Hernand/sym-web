@@ -24,6 +24,7 @@ export default function Footer() {
           <a href={COMPANY.instagram} target="_blank" rel="noopener noreferrer" aria-label="Instagram de Inversiones S&M" className="w-10 h-10 flex items-center justify-center transition-all duration-300 hover:-translate-y-1 hover:scale-110 group"><Instagram className="w-5 h-5 text-[#1B3A6B]/60 group-hover:text-brand-blue-light transition-colors" /></a>
           <a href={COMPANY.tiktok} target="_blank" rel="noopener noreferrer" aria-label="TikTok de Inversiones S&M" className="w-10 h-10 flex items-center justify-center transition-all duration-300 hover:-translate-y-1 hover:scale-110 group"><TikTokIcon className="w-5 h-5 text-[#1B3A6B]/60 group-hover:text-brand-blue-light transition-colors" /></a>
         </div>
+        <a href="/privacidad" className="text-xs text-[#1B3A6B]/50 hover:text-brand-blue-light transition-colors">Política de privacidad</a>
       </motion.div>
     </footer>
   );
