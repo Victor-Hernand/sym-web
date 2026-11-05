@@ -16,7 +16,7 @@ export default function SocialLinks() {
         <li key={name} className="relative group">
           <span
             role="tooltip"
-            className="pointer-events-none absolute -top-11 left-1/2 -translate-x-1/2 whitespace-nowrap rounded-sm bg-[#0E2240] px-2.5 py-1 font-display text-[11px] font-bold uppercase tracking-wider text-white opacity-0 shadow-lg transition-all duration-200 group-hover:opacity-100 group-focus-within:opacity-100 group-hover:-translate-y-0.5"
+            className="pointer-events-none absolute -top-11 left-1/2 -translate-x-1/2 whitespace-nowrap rounded-sm bg-[#0E2240] px-2.5 py-1 font-display text-[11px] font-bold uppercase tracking-wider text-white opacity-0 shadow-lg transition-[transform,opacity,box-shadow,background-color,border-color,color] duration-200 group-hover:opacity-100 group-focus-within:opacity-100 group-hover:-translate-y-0.5"
           >
             {name}
             <span className="absolute left-1/2 -bottom-1 h-2 w-2 -translate-x-1/2 rotate-45 bg-[#0E2240]" />
@@ -26,7 +26,7 @@ export default function SocialLinks() {
             target="_blank"
             rel="noopener noreferrer"
             aria-label={`${name} de Inversiones S&M`}
-            className={`flex h-12 w-12 items-center justify-center rounded-full bg-white text-[#1B3A6B] shadow-lg shadow-[#1B3A6B]/10 transition-all duration-300 ease-out hover:-translate-y-1 hover:text-white hover:shadow-xl focus:outline-none focus-visible:ring-2 focus-visible:ring-brand-blue-light focus-visible:ring-offset-2 ${hoverBg}`}
+            className={`flex h-12 w-12 items-center justify-center rounded-full bg-white text-[#1B3A6B] shadow-lg shadow-[#1B3A6B]/10 transition-[transform,opacity,box-shadow,background-color,border-color,color] duration-300 ease-out hover:-translate-y-1 hover:text-white hover:shadow-xl focus:outline-none focus-visible:ring-2 focus-visible:ring-brand-blue-light focus-visible:ring-offset-2 ${hoverBg}`}
           >
             <Icon className="h-5 w-5" />
           </a>

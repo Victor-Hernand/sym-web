@@ -33,7 +33,7 @@ export default function Navbar() {
       type="button"
       onClick={() => setQuoteOpen(true)}
       aria-label={`Lista de cotización, ${count} ${count === 1 ? "unidad" : "unidades"}`}
-      className="relative w-10 h-10 flex items-center justify-center rounded-sm border border-brand-blue/15 text-brand-blue-light hover:bg-brand-blue hover:border-brand-blue hover:text-white transition-all duration-300"
+      className="relative w-10 h-10 flex items-center justify-center rounded-sm border border-brand-blue/15 text-brand-blue-light hover:bg-brand-blue hover:border-brand-blue hover:text-white transition-[transform,opacity,box-shadow,background-color,border-color,color] duration-300"
     >
       <ShoppingCart className="w-5 h-5" />
       {count > 0 && (
@@ -64,7 +64,7 @@ export default function Navbar() {
       </div>
 
       {/* Main Nav */}
-      <header className={`sticky top-0 z-50 transition-all duration-500 ${scrolled ? "glass shadow-2xl shadow-brand-blue/10" : "bg-light-surface/80 backdrop-blur-sm"}`}>
+      <header className={`sticky top-0 z-50 transition-[transform,opacity,box-shadow,background-color,border-color,color] duration-500 ${scrolled ? "glass shadow-2xl shadow-brand-blue/10" : "bg-light-surface/80 backdrop-blur-sm"}`}>
         <div className="container py-3 flex items-center justify-between">
           <a href="/" className="flex items-center gap-3 group">
             <img src={IMAGES.logo} alt="Inversiones S&M" className="h-16 md:h-20 w-auto object-contain" />
@@ -76,10 +76,10 @@ export default function Navbar() {
               <button
                 key={item.href}
                 onClick={() => handleNavClick(item.href)}
-                className="px-4 py-2 text-sm font-display font-semibold uppercase tracking-wider text-sym-charcoal/70 hover:text-brand-blue-light transition-all relative group"
+                className="px-4 py-2 text-sm font-display font-semibold uppercase tracking-wider text-sym-charcoal/70 hover:text-brand-blue-light transition-[transform,opacity,box-shadow,background-color,border-color,color] relative group"
               >
                 {item.label}
-                <span className="absolute bottom-0 left-1/2 -translate-x-1/2 w-0 h-0.5 bg-gradient-to-r from-brand-blue to-brand-blue-light group-hover:w-full transition-all duration-300" />
+                <span className="absolute bottom-0 left-1/2 -translate-x-1/2 w-0 h-0.5 bg-gradient-to-r from-brand-blue to-brand-blue-light group-hover:w-full transition-[transform,opacity,box-shadow,background-color,border-color,color] duration-300" />
               </button>
             ))}
           </nav>
@@ -92,7 +92,7 @@ export default function Navbar() {
                 rel="noopener noreferrer"
                 aria-label="Facebook de Inversiones S&M"
                 title="Facebook"
-                className="w-9 h-9 flex items-center justify-center rounded-sm border border-brand-blue/15 text-brand-blue-light hover:bg-brand-blue hover:border-brand-blue hover:text-white transition-all duration-300 hover:-translate-y-0.5 hover:scale-110"
+                className="w-9 h-9 flex items-center justify-center rounded-sm border border-brand-blue/15 text-brand-blue-light hover:bg-brand-blue hover:border-brand-blue hover:text-white transition-[transform,opacity,box-shadow,background-color,border-color,color] duration-300 hover:-translate-y-0.5 hover:scale-110"
               >
                 <Facebook className="w-4 h-4" />
               </a>
@@ -102,7 +102,7 @@ export default function Navbar() {
                 rel="noopener noreferrer"
                 aria-label="Instagram de Inversiones S&M"
                 title="Instagram"
-                className="w-9 h-9 flex items-center justify-center rounded-sm border border-brand-blue/15 text-brand-blue-light hover:bg-brand-blue hover:border-brand-blue hover:text-white transition-all duration-300 hover:-translate-y-0.5 hover:scale-110"
+                className="w-9 h-9 flex items-center justify-center rounded-sm border border-brand-blue/15 text-brand-blue-light hover:bg-brand-blue hover:border-brand-blue hover:text-white transition-[transform,opacity,box-shadow,background-color,border-color,color] duration-300 hover:-translate-y-0.5 hover:scale-110"
               >
                 <Instagram className="w-4 h-4" />
               </a>
@@ -112,7 +112,7 @@ export default function Navbar() {
                 rel="noopener noreferrer"
                 aria-label="TikTok de Inversiones S&M"
                 title="TikTok"
-                className="w-9 h-9 flex items-center justify-center rounded-sm border border-brand-blue/15 text-brand-blue-light hover:bg-brand-blue hover:border-brand-blue hover:text-white transition-all duration-300 hover:-translate-y-0.5 hover:scale-110"
+                className="w-9 h-9 flex items-center justify-center rounded-sm border border-brand-blue/15 text-brand-blue-light hover:bg-brand-blue hover:border-brand-blue hover:text-white transition-[transform,opacity,box-shadow,background-color,border-color,color] duration-300 hover:-translate-y-0.5 hover:scale-110"
               >
                 <TikTokIcon className="w-4 h-4" />
               </a>
@@ -179,7 +179,7 @@ export default function Navbar() {
                     target="_blank"
                     rel="noopener noreferrer"
                     aria-label="Facebook de Inversiones S&M"
-                    className="w-10 h-10 flex items-center justify-center rounded-sm border border-brand-blue/15 text-brand-blue-light hover:bg-brand-blue hover:border-brand-blue hover:text-white transition-all"
+                    className="w-10 h-10 flex items-center justify-center rounded-sm border border-brand-blue/15 text-brand-blue-light hover:bg-brand-blue hover:border-brand-blue hover:text-white transition-[transform,opacity,box-shadow,background-color,border-color,color]"
                   >
                     <Facebook className="w-5 h-5" />
                   </a>
@@ -188,7 +188,7 @@ export default function Navbar() {
                     target="_blank"
                     rel="noopener noreferrer"
                     aria-label="Instagram de Inversiones S&M"
-                    className="w-10 h-10 flex items-center justify-center rounded-sm border border-brand-blue/15 text-brand-blue-light hover:bg-brand-blue hover:border-brand-blue hover:text-white transition-all"
+                    className="w-10 h-10 flex items-center justify-center rounded-sm border border-brand-blue/15 text-brand-blue-light hover:bg-brand-blue hover:border-brand-blue hover:text-white transition-[transform,opacity,box-shadow,background-color,border-color,color]"
                   >
                     <Instagram className="w-5 h-5" />
                   </a>
@@ -197,7 +197,7 @@ export default function Navbar() {
                     target="_blank"
                     rel="noopener noreferrer"
                     aria-label="TikTok de Inversiones S&M"
-                    className="w-10 h-10 flex items-center justify-center rounded-sm border border-brand-blue/15 text-brand-blue-light hover:bg-brand-blue hover:border-brand-blue hover:text-white transition-all"
+                    className="w-10 h-10 flex items-center justify-center rounded-sm border border-brand-blue/15 text-brand-blue-light hover:bg-brand-blue hover:border-brand-blue hover:text-white transition-[transform,opacity,box-shadow,background-color,border-color,color]"
                   >
                     <TikTokIcon className="w-5 h-5" />
                   </a>

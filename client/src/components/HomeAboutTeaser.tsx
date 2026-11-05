@@ -106,7 +106,7 @@ export default function HomeAboutTeaser() {
                   onClick={() => go(i)}
                   aria-label={`Ver foto ${i + 1}`}
                   aria-current={index === i}
-                  className={`h-2.5 rounded-full transition-all ${index === i ? "w-6 bg-brand-blue" : "w-2.5 bg-[#1B3A6B]/20 hover:bg-[#1B3A6B]/40"}`}
+                  className={`h-2.5 rounded-full transition-[transform,opacity,box-shadow,background-color,border-color,color] ${index === i ? "w-6 bg-brand-blue" : "w-2.5 bg-[#1B3A6B]/20 hover:bg-[#1B3A6B]/40"}`}
                 />
               ))}
             </div>

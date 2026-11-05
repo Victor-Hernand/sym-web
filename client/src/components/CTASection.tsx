@@ -19,9 +19,9 @@ export default function CTASection() {
       <div className="absolute bottom-0 right-0 w-96 h-96 bg-brand-blue-bright/10 rounded-full blur-3xl animate-blob [animation-delay:6s]" />
 
       <div className="container relative z-10 text-center">
-        <motion.div initial={{ opacity: 0, y: 30 }} animate={isInView ? { opacity: 1, y: 0 } : {}} transition={{ duration: 0.7 }}>
+        <motion.div initial={{ y: 30 }} animate={isInView ? { opacity: 1, y: 0 } : {}} transition={{ duration: 0.7 }}>
           <motion.h2
-            initial={{ opacity: 0, y: 24 }}
+            initial={{ y: 24 }}
             animate={isInView ? { opacity: 1, y: 0 } : {}}
             transition={{ duration: 0.6, delay: 0.1 }}
             className="font-display font-black text-3xl md:text-4xl lg:text-5xl text-white leading-tight mb-4 md:whitespace-nowrap"
@@ -36,7 +36,7 @@ export default function CTASection() {
             </motion.span>?
           </motion.h2>
           <motion.p
-            initial={{ opacity: 0, y: 18 }}
+            initial={{ y: 18 }}
             animate={isInView ? { opacity: 1, y: 0 } : {}}
             transition={{ duration: 0.6, delay: 0.25 }}
             className="text-white/65 text-base md:text-lg max-w-xl mx-auto mb-6"
@@ -44,15 +44,15 @@ export default function CTASection() {
             Cientos de distribuidoras confían en Inversiones S&M por su stock constante, precios competitivos y entregas confiables.
           </motion.p>
           <motion.div
-            initial={{ opacity: 0, y: 18 }}
+            initial={{ y: 18 }}
             animate={isInView ? { opacity: 1, y: 0 } : {}}
             transition={{ duration: 0.6, delay: 0.4 }}
             className="flex flex-wrap justify-center gap-4"
           >
-            <motion.a whileHover={{ scale: 1.04, y: -3 }} whileTap={{ scale: 0.97 }} href={COMPANY.whatsapp} target="_blank" rel="noopener noreferrer" className="bg-white text-[#1B3A6B] font-bold uppercase tracking-wider px-6 py-3 rounded-sm font-display text-sm flex items-center gap-2 hover:bg-white/90 hover:shadow-lg transition-all">
+            <motion.a whileHover={{ scale: 1.04, y: -3 }} whileTap={{ scale: 0.97 }} href={COMPANY.whatsapp} target="_blank" rel="noopener noreferrer" className="bg-white text-[#1B3A6B] font-bold uppercase tracking-wider px-6 py-3 rounded-sm font-display text-sm flex items-center gap-2 hover:bg-white/90 hover:shadow-lg transition-[transform,opacity,box-shadow,background-color,border-color,color]">
               <MessageCircle className="w-5 h-5" /> COTIZAR POR WHATSAPP (B2B)
             </motion.a>
-            <motion.a whileHover={{ scale: 1.04, y: -3 }} whileTap={{ scale: 0.97 }} href={`mailto:${COMPANY.email}?subject=${encodeURIComponent("Solicitud de cotización")}`} className="border-2 border-white/40 text-white font-semibold uppercase tracking-wider px-6 py-3 rounded-sm font-display text-sm flex items-center gap-2 hover:bg-white/10 hover:border-white/60 transition-all">
+            <motion.a whileHover={{ scale: 1.04, y: -3 }} whileTap={{ scale: 0.97 }} href={`mailto:${COMPANY.email}?subject=${encodeURIComponent("Solicitud de cotización")}`} className="border-2 border-white/40 text-white font-semibold uppercase tracking-wider px-6 py-3 rounded-sm font-display text-sm flex items-center gap-2 hover:bg-white/10 hover:border-white/60 transition-[transform,opacity,box-shadow,background-color,border-color,color]">
               <Mail className="w-5 h-5" /> COTIZAR POR CORREO
             </motion.a>
           </motion.div>

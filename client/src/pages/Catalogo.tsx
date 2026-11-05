@@ -39,9 +39,11 @@ const norm = (s: string) => s.normalize("NFD").replace(/[̀-ͯ]/g, "").toLowerCa
 function readParams() {
   const params = new URLSearchParams(window.location.search);
   const cat = params.get("cat");
+  const veh = params.get("veh");
   return {
     q: params.get("q") ?? "",
     cat: cat && PRODUCT_CATEGORIES.includes(cat) ? cat : ALL,
+    veh: veh && VEHICLE_MAKES.includes(veh) ? veh : ALL,
   };
 }
 
@@ -53,7 +55,7 @@ export default function Catalogo() {
   const [query, setQuery] = useState(initial.q);
   const [category, setCategory] = useState(initial.cat);
   const [brand, setBrand] = useState(ALL);
-  const [vehicleMake, setVehicleMake] = useState(ALL);
+  const [vehicleMake, setVehicleMake] = useState(initial.veh);
   const [sort, setSort] = useState<SortKey>("relevance");
 
   const results = useMemo(() => {
@@ -166,7 +168,7 @@ export default function Catalogo() {
                       type="button"
                       onClick={() => setCategory(cat)}
                       aria-pressed={active}
-                      className={`shrink-0 lg:w-full flex items-center gap-2.5 px-3.5 py-2.5 rounded-sm font-display text-xs font-bold uppercase tracking-wider border transition-all lg:justify-between ${
+                      className={`shrink-0 lg:w-full flex items-center gap-2.5 px-3.5 py-2.5 rounded-sm font-display text-xs font-bold uppercase tracking-wider border transition-[transform,opacity,box-shadow,background-color,border-color,color] lg:justify-between ${
                         active
                           ? "bg-brand-blue text-white border-brand-blue shadow-md"
                           : "bg-white text-[#1B3A6B]/70 border-[#1B3A6B]/12 hover:border-brand-blue-light/40 hover:text-brand-blue-light"

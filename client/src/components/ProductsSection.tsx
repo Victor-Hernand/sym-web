@@ -61,7 +61,7 @@ export default function ProductsSection() {
                 onClick={() => goTo(i)}
                 whileHover={{ y: -3, scale: 1.03 }}
                 whileTap={{ scale: 0.96 }}
-                className={`flex items-center gap-2 px-4 py-2.5 rounded-sm font-display font-semibold text-xs uppercase tracking-wider transition-all ${
+                className={`flex items-center gap-2 px-4 py-2.5 rounded-sm font-display font-semibold text-xs uppercase tracking-wider transition-[transform,opacity,box-shadow,background-color,border-color,color] ${
                   activeTab === i ? "btn-brand" : "bg-white border border-[#1B3A6B]/10 shadow-sm text-[#1B3A6B]/60 hover:text-brand-blue-light hover:border-brand-blue-light/25"
                 }`}
               >
@@ -122,7 +122,7 @@ export default function ProductsSection() {
                     onClick={() => goTo(i)}
                     aria-label={`Mostrar ${cat.name}`}
                     aria-current={activeTab === i}
-                    className={`h-2.5 rounded-full transition-all ${activeTab === i ? "w-6 bg-brand-blue" : "w-2.5 bg-[#1B3A6B]/20 hover:bg-[#1B3A6B]/40"}`}
+                    className={`h-2.5 rounded-full transition-[transform,opacity,box-shadow,background-color,border-color,color] ${activeTab === i ? "w-6 bg-brand-blue" : "w-2.5 bg-[#1B3A6B]/20 hover:bg-[#1B3A6B]/40"}`}
                   />
                 ))}
               </div>
@@ -213,7 +213,7 @@ export default function ProductsSection() {
                       target="_blank"
                       rel="noopener noreferrer"
                       aria-label={`Cotizar ${product.name} ${product.brand} por WhatsApp`}
-                      className="btn-brand flex w-full items-center justify-center gap-2 rounded-lg px-6 py-3 font-display text-xs font-bold uppercase shadow-md shadow-brand-blue/20 transition-all hover:shadow-lg hover:shadow-brand-blue/40"
+                      className="btn-brand flex w-full items-center justify-center gap-2 rounded-lg px-6 py-3 font-display text-xs font-bold uppercase shadow-md shadow-brand-blue/20 transition-[transform,opacity,box-shadow,background-color,border-color,color] hover:shadow-lg hover:shadow-brand-blue/40"
                     >
                       <MessageCircle className="h-4 w-4" /> Cotizar por WhatsApp
                       <ArrowRight className="h-3.5 w-3.5" />

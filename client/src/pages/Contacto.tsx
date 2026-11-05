@@ -31,7 +31,7 @@ const CLIENT_TYPES = [
   "Taller mecánico",
 ];
 
-const inputClass = "w-full bg-white border border-[#1B3A6B]/12 text-[#1B3A6B] px-4 py-3 rounded-sm text-sm focus:border-brand-blue-light/50 focus:outline-none focus:ring-1 focus:ring-brand-blue/20 transition-all placeholder:text-[#1B3A6B]/30";
+const inputClass = "w-full bg-white border border-[#1B3A6B]/12 text-[#1B3A6B] px-4 py-3 rounded-sm text-sm focus:border-brand-blue-light/50 focus:outline-none focus:ring-1 focus:ring-brand-blue/20 transition-[transform,opacity,box-shadow,background-color,border-color,color] placeholder:text-[#1B3A6B]/30";
 
 export default function Contacto() {
   const [formData, setFormData] = useState({ name: "", company: "", clientType: "", phone: "", email: "", message: "", privacyAccepted: false });
@@ -75,7 +75,7 @@ export default function Contacto() {
               {/* Información de contacto */}
               <div className="lg:col-span-2 space-y-4">
                 {contactInfo.map((info) => (
-                  <a key={info.label} href={info.href} className="bg-white border border-[#1B3A6B]/8 shadow-sm p-4 rounded-sm flex items-start gap-4 group hover:border-brand-blue-light/25 hover:shadow-md transition-all block">
+                  <a key={info.label} href={info.href} className="bg-white border border-[#1B3A6B]/8 shadow-sm p-4 rounded-sm flex items-start gap-4 group hover:border-brand-blue-light/25 hover:shadow-md transition-[transform,opacity,box-shadow,background-color,border-color,color] block">
                     <div className="w-10 h-10 bg-[#1B3A6B]/8 flex items-center justify-center rounded-sm shrink-0 group-hover:bg-[#1B3A6B]/12 transition-colors">
                       <info.icon className="w-5 h-5 text-brand-blue-light" />
                     </div>
@@ -85,7 +85,7 @@ export default function Contacto() {
                     </div>
                   </a>
                 ))}
-                <a href={COMPANY.whatsapp} target="_blank" rel="noopener noreferrer" className="flex items-center justify-center gap-3 bg-[#25D366] hover:bg-[#20BD5A] text-white py-4 px-6 font-display font-bold uppercase tracking-wider transition-all rounded-sm text-sm mt-4">
+                <a href={COMPANY.whatsapp} target="_blank" rel="noopener noreferrer" className="flex items-center justify-center gap-3 bg-[#25D366] hover:bg-[#20BD5A] text-white py-4 px-6 font-display font-bold uppercase tracking-wider transition-[transform,opacity,box-shadow,background-color,border-color,color] rounded-sm text-sm mt-4">
                   <MessageCircle className="w-5 h-5" /> ESCRIBIR POR WHATSAPP
                 </a>
               </div>
@@ -97,16 +97,16 @@ export default function Contacto() {
                   <p className="text-[#1B3A6B]/45 text-sm mb-6">Complete el formulario y uno de nuestros asesores comerciales se pondrá en contacto con usted.</p>
                   <div className="grid sm:grid-cols-2 gap-5">
                     <div>
-                      <label className="text-[#1B3A6B]/55 text-xs font-display font-semibold uppercase tracking-wider mb-2 block">Nombre Completo *</label>
-                      <input type="text" required value={formData.name} onChange={(e) => setFormData({ ...formData, name: e.target.value })} className={inputClass} placeholder="Su nombre" />
+                      <label htmlFor="contacto-nombre" className="text-[#1B3A6B]/55 text-xs font-display font-semibold uppercase tracking-wider mb-2 block">Nombre Completo *</label>
+                      <input id="contacto-nombre" name="nombre" autoComplete="name" type="text" required value={formData.name} onChange={(e) => setFormData({ ...formData, name: e.target.value })} className={inputClass} placeholder="Su nombre" />
                     </div>
                     <div>
-                      <label className="text-[#1B3A6B]/55 text-xs font-display font-semibold uppercase tracking-wider mb-2 block">Empresa *</label>
-                      <input type="text" required value={formData.company} onChange={(e) => setFormData({ ...formData, company: e.target.value })} className={inputClass} placeholder="Nombre de su empresa" />
+                      <label htmlFor="contacto-empresa" className="text-[#1B3A6B]/55 text-xs font-display font-semibold uppercase tracking-wider mb-2 block">Empresa *</label>
+                      <input id="contacto-empresa" name="empresa" autoComplete="organization" type="text" required value={formData.company} onChange={(e) => setFormData({ ...formData, company: e.target.value })} className={inputClass} placeholder="Nombre de su empresa" />
                     </div>
                     <div className="sm:col-span-2">
-                      <label className="text-[#1B3A6B]/55 text-xs font-display font-semibold uppercase tracking-wider mb-2 block">Tipo de cliente *</label>
-                      <select required value={formData.clientType} onChange={(e) => setFormData({ ...formData, clientType: e.target.value })} className={inputClass}>
+                      <label htmlFor="contacto-tipo" className="text-[#1B3A6B]/55 text-xs font-display font-semibold uppercase tracking-wider mb-2 block">Tipo de cliente *</label>
+                      <select id="contacto-tipo" name="tipo" required value={formData.clientType} onChange={(e) => setFormData({ ...formData, clientType: e.target.value })} className={inputClass}>
                         <option value="" disabled>Seleccione una opción</option>
                         {CLIENT_TYPES.map((type) => (
                           <option key={type} value={type}>{type}</option>
@@ -114,17 +114,17 @@ export default function Contacto() {
                       </select>
                     </div>
                     <div>
-                      <label className="text-[#1B3A6B]/55 text-xs font-display font-semibold uppercase tracking-wider mb-2 block">Teléfono *</label>
-                      <input type="tel" required value={formData.phone} onChange={(e) => setFormData({ ...formData, phone: e.target.value })} className={inputClass} placeholder="+504 ____-____" />
+                      <label htmlFor="contacto-telefono" className="text-[#1B3A6B]/55 text-xs font-display font-semibold uppercase tracking-wider mb-2 block">Teléfono *</label>
+                      <input id="contacto-telefono" name="telefono" autoComplete="tel" inputMode="tel" type="tel" required value={formData.phone} onChange={(e) => setFormData({ ...formData, phone: e.target.value })} className={inputClass} placeholder="+504 ____-____" />
                     </div>
                     <div>
-                      <label className="text-[#1B3A6B]/55 text-xs font-display font-semibold uppercase tracking-wider mb-2 block">Correo Electrónico</label>
-                      <input type="email" value={formData.email} onChange={(e) => setFormData({ ...formData, email: e.target.value })} className={inputClass} placeholder="correo@empresa.com" />
+                      <label htmlFor="contacto-correo" className="text-[#1B3A6B]/55 text-xs font-display font-semibold uppercase tracking-wider mb-2 block">Correo Electrónico</label>
+                      <input id="contacto-correo" name="correo" autoComplete="email" spellCheck={false} type="email" value={formData.email} onChange={(e) => setFormData({ ...formData, email: e.target.value })} className={inputClass} placeholder="correo@empresa.com" />
                     </div>
                   </div>
                   <div>
-                    <label className="text-[#1B3A6B]/55 text-xs font-display font-semibold uppercase tracking-wider mb-2 block">Mensaje / Productos *</label>
-                    <textarea required rows={4} value={formData.message} onChange={(e) => setFormData({ ...formData, message: e.target.value })} className={`${inputClass} resize-none`} placeholder="Describa los productos que necesita o el tipo de negocio al que pertenece." />
+                    <label htmlFor="contacto-mensaje" className="text-[#1B3A6B]/55 text-xs font-display font-semibold uppercase tracking-wider mb-2 block">Mensaje / Productos *</label>
+                    <textarea id="contacto-mensaje" name="mensaje" required rows={4} value={formData.message} onChange={(e) => setFormData({ ...formData, message: e.target.value })} className={`${inputClass} resize-none`} placeholder="Describa los productos que necesita o el tipo de negocio al que pertenece." />
                   </div>
                   <label className="flex items-start gap-3 text-sm text-[#1B3A6B]/70 cursor-pointer">
                     <input type="checkbox" required checked={formData.privacyAccepted} onChange={(e) => setFormData({ ...formData, privacyAccepted: e.target.checked })} className="mt-1 w-4 h-4 accent-[#1B3A6B] shrink-0" />
@@ -166,7 +166,7 @@ export default function Contacto() {
 
               <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-4">
                 {coverageFeatures.map((feat) => (
-                  <div key={feat.title} className="bg-white border border-[#1B3A6B]/8 shadow-sm p-5 rounded-sm hover:border-brand-blue-light/25 hover:shadow-md transition-all">
+                  <div key={feat.title} className="bg-white border border-[#1B3A6B]/8 shadow-sm p-5 rounded-sm hover:border-brand-blue-light/25 hover:shadow-md transition-[transform,opacity,box-shadow,background-color,border-color,color]">
                     <feat.icon className="w-8 h-8 text-brand-blue-light mb-3" />
                     <h3 className="font-display font-bold text-sm uppercase tracking-wider text-[#1B3A6B]">{feat.title}</h3>
                     <p className="text-sm text-[#1B3A6B]/60 mt-2 leading-relaxed">{feat.description}</p>
@@ -185,10 +185,10 @@ export default function Contacto() {
                 Súmate al equipo de Inversiones S&amp;M y del Grupo CAP Honduras. Conoce nuestras vacantes y envía tu aplicación.
               </p>
               <div className="flex flex-wrap justify-center gap-4">
-                <a href={COMPANY.linkedin} target="_blank" rel="noopener noreferrer" className="bg-[#1B3A6B] hover:bg-[#0E2240] text-white font-bold uppercase tracking-wider px-8 py-4 rounded-sm font-display text-sm flex items-center gap-3 transition-all">
+                <a href={COMPANY.linkedin} target="_blank" rel="noopener noreferrer" className="bg-[#1B3A6B] hover:bg-[#0E2240] text-white font-bold uppercase tracking-wider px-8 py-4 rounded-sm font-display text-sm flex items-center gap-3 transition-[transform,opacity,box-shadow,background-color,border-color,color]">
                   <Linkedin className="w-5 h-5" /> VER VACANTES EN LINKEDIN
                 </a>
-                <a href={COMPANY.careersApply} target="_blank" rel="noopener noreferrer" className="border-2 border-[#1B3A6B]/40 text-[#1B3A6B] font-semibold uppercase tracking-wider px-8 py-4 rounded-sm font-display text-sm flex items-center gap-3 hover:bg-[#1B3A6B]/5 transition-all">
+                <a href={COMPANY.careersApply} target="_blank" rel="noopener noreferrer" className="border-2 border-[#1B3A6B]/40 text-[#1B3A6B] font-semibold uppercase tracking-wider px-8 py-4 rounded-sm font-display text-sm flex items-center gap-3 hover:bg-[#1B3A6B]/5 transition-[transform,opacity,box-shadow,background-color,border-color,color]">
                   <Send className="w-5 h-5" /> APLICAR AHORA
                 </a>
               </div>

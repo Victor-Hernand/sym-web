@@ -1,6 +1,7 @@
 // Panel lateral con la lista de cotización: ajustar cantidades y enviarla por WhatsApp.
 import { COMPANY } from "@/lib/data";
 import { useCart, useQuoteLines } from "@/contexts/CartContext";
+import { buildWhatsAppHref } from "@/lib/quote";
 import { Sheet, SheetContent, SheetDescription, SheetFooter, SheetHeader, SheetTitle } from "@/components/ui/sheet";
 import { Minus, Plus, Trash2, MessageCircle, ShoppingCart } from "lucide-react";
 
@@ -9,17 +10,10 @@ type QuoteDrawerProps = {
   onOpenChange: (open: boolean) => void;
 };
 
-export function buildQuoteMessage(lines: { product: { name: string; brand?: string }; qty: number }[]) {
-  const detail = lines
-    .map(({ product, qty }) => `- ${qty} x ${product.name}${product.brand ? ` ${product.brand}` : ""}`)
-    .join("\n");
-  return `Hola, quisiera cotizar los siguientes repuestos:\n${detail}\n\n¿Me confirman precio mayorista y disponibilidad? Gracias.`;
-}
-
 export default function QuoteDrawer({ open, onOpenChange }: QuoteDrawerProps) {
   const { setQty, remove, clear, count } = useCart();
   const lines = useQuoteLines();
-  const whatsappHref = `${COMPANY.whatsapp}?text=${encodeURIComponent(buildQuoteMessage(lines))}`;
+  const whatsappHref = buildWhatsAppHref(COMPANY.whatsapp, lines);
 
   return (
     <Sheet open={open} onOpenChange={onOpenChange}>

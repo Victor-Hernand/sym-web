@@ -5,6 +5,7 @@ import Navbar from "@/components/Navbar";
 import HeroSection from "@/components/HeroSection";
 import StoreSearchSection from "@/components/StoreSearchSection";
 import HomeAboutTeaser from "@/components/HomeAboutTeaser";
+import TrustBar from "@/components/TrustBar";
 import ProductsSection from "@/components/ProductsSection";
 import BrandsSection from "@/components/BrandsSection";
 import ProcessSection from "@/components/ProcessSection";
@@ -22,6 +23,7 @@ export default function Home() {
       <main>
         <HeroSection />
         <StoreSearchSection />
+        <TrustBar />
         <HomeAboutTeaser />
         <AdvisorsSection />
         <BrandsSection />

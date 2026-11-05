@@ -14,7 +14,7 @@ export default function ProductCard({ product }: { product: Product }) {
 
   return (
     <>
-      <article className="group relative bg-white border border-[#1B3A6B]/10 rounded-sm overflow-hidden flex flex-col shadow-sm transition-all duration-300 hover:-translate-y-1 hover:shadow-xl hover:border-brand-blue-light/30">
+      <article className="group relative bg-white border border-[#1B3A6B]/10 rounded-sm overflow-hidden flex flex-col shadow-sm transition-[transform,opacity,box-shadow,background-color,border-color,color] duration-300 hover:-translate-y-1 hover:shadow-xl hover:border-brand-blue-light/30">
         {/* Accento superior que aparece al pasar el mouse */}
         <span className="absolute inset-x-0 top-0 h-[3px] bg-gradient-to-r from-brand-blue to-brand-blue-light scale-x-0 group-hover:scale-x-100 transition-transform duration-500 origin-left z-10" />
 
