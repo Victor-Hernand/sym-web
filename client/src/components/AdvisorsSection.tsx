@@ -14,25 +14,25 @@ export default function AdvisorsSection() {
   const openBenefit = openIndex !== null ? ADVISOR_BENEFITS[openIndex] : null;
 
   return (
-    <section id="asesores" className="pt-0 pb-12 md:pb-16 bg-light-bg relative overflow-hidden noise-overlay" ref={ref}>
+    <section id="asesores" className="pt-0 pb-0 bg-light-bg relative overflow-hidden noise-overlay" ref={ref}>
       <div className="container relative z-10">
         <motion.div
           initial={{ opacity: 0, x: -30 }}
           animate={isInView ? { opacity: 1, x: 0 } : {}}
           transition={{ duration: 0.7 }}
-          className="max-w-4xl mx-auto text-center"
+          className="max-w-6xl mx-auto text-center"
         >
           <span className="section-label justify-center">Equipo Comercial</span>
           <h2 className="font-display font-black text-4xl md:text-5xl text-[#1B3A6B] mt-4 mb-6 leading-tight md:whitespace-nowrap">
             Nuestros asesores de <span className="blue-gradient">venta B2B</span>
           </h2>
-          <p className="text-[#1B3A6B]/60 leading-relaxed mb-8">
+          <p className="text-[#1B3A6B]/60 leading-relaxed mb-8 max-w-3xl mx-auto">
             En {COMPANY.name} contamos con un equipo de los mejores asesores en venta de autopartes, dedicados a brindarte un servicio excepcional y una experiencia de compra inigualable.
           </p>
           <img
             src={IMAGES.realEquipoFremap}
             alt="Equipo de Inversiones S&M en bodega"
-            className="w-full max-w-2xl mx-auto aspect-[4/3] object-cover rounded-sm"
+            className="w-full mx-auto aspect-[16/10] object-cover rounded-sm shadow-lg"
           />
         </motion.div>
       </div>

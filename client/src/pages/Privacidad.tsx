@@ -13,7 +13,7 @@ const sections: { title: string; paragraphs: string[] }[] = [
     paragraphs: [
       "Inversiones Castro S de R L, que opera comercialmente como Inversiones S&M, es responsable de los datos personales recopilados a través del sitio inversionessymhn.com, incluidas las páginas Nosotros y Contacto.",
       "Razón social: Inversiones Castro S de R L. Nombre comercial: Inversiones S&M. RTN: 08019019103201. País: Honduras. Domicilio: Boulevard Comunidad Económica Europea, frente a Plaza Aire Frío, Tegucigalpa, Honduras.",
-      "Responsable de la información de privacidad: ventas@sym.com, teléfono +504 9210-9620.",
+      "Responsable de la información de privacidad: ventas@inversym.com, teléfono +504 9210-9620.",
       "Esta política aplica a quienes envían una solicitud de cotización mayorista desde el sitio, a quienes nos escriben por WhatsApp o correo, y a cualquier persona que use el sitio.",
       "Las postulaciones de empleo se realizan en el portal de reclutamiento CAP Recruit (recruit.capgrupo.com), operado por Grupo Empresarial CAP. Ese portal se rige por su propia política de privacidad y no por esta.",
       "Al usar el sitio o enviar una solicitud, usted declara haber leído esta política.",
@@ -97,7 +97,7 @@ const sections: { title: string; paragraphs: string[] }[] = [
     title: "11. Sus derechos",
     paragraphs: [
       "Puede solicitar acceso, rectificación, cancelación y oposición sobre sus datos (derechos ARCO), así como una copia en formato legible (portabilidad). Puede además revocar en cualquier momento la autorización que nos dio. Estos derechos se fundamentan en la garantía constitucional de Hábeas Data.",
-      "Para ejercerlos, escriba a ventas@sym.com indicando el derecho que ejerce, los datos a los que se refiere y el medio de contacto con el que nos escribió. Responderemos en un plazo máximo de 10 días hábiles; si la solicitud es compleja, el plazo podrá ampliarse 10 días más, y se lo comunicaremos.",
+      "Para ejercerlos, escriba a ventas@inversym.com indicando el derecho que ejerce, los datos a los que se refiere y el medio de contacto con el que nos escribió. Responderemos en un plazo máximo de 10 días hábiles; si la solicitud es compleja, el plazo podrá ampliarse 10 días más, y se lo comunicaremos.",
       "Si no recibe respuesta o no está conforme, puede acudir a la acción de Hábeas Data ante los tribunales hondureños competentes.",
     ],
   },
@@ -111,7 +111,7 @@ const sections: { title: string; paragraphs: string[] }[] = [
     title: "13. Cambios y contacto",
     paragraphs: [
       "Podemos actualizar esta política cuando cambien los servicios, los proveedores o la legislación aplicable. La versión vigente estará siempre publicada en esta página, con su fecha de última actualización.",
-      "Para consultas, solicitudes o reclamos relacionados con esta política, escriba a ventas@sym.com o llame al +504 9210-9620.",
+      "Para consultas, solicitudes o reclamos relacionados con esta política, escriba a ventas@inversym.com o llame al +504 9210-9620.",
     ],
   },
 ];

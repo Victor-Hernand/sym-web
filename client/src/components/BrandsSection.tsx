@@ -10,7 +10,7 @@ export default function BrandsSection() {
   const secondRow = BRANDS.slice(Math.ceil(BRANDS.length / 2));
 
   return (
-    <section id="marcas" className="pt-12 md:pt-16 pb-6 md:pb-8 bg-light-surface relative overflow-hidden border-y border-brand-blue/8" ref={ref}>
+    <section id="marcas" className="pt-8 md:pt-10 pb-6 md:pb-8 bg-light-surface relative overflow-hidden border-y border-brand-blue/8" ref={ref}>
       <div className="container relative z-10 mb-8">
         <motion.div initial={{ opacity: 0, y: 20 }} animate={isInView ? { opacity: 1, y: 0 } : {}} transition={{ duration: 0.6 }} className="text-center">
           <span className="section-label justify-center">Nuestras Marcas</span>

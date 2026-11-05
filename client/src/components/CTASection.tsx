@@ -2,7 +2,7 @@
 import { COMPANY } from "@/lib/data";
 import { motion } from "framer-motion";
 import { useInView } from "@/hooks/useInView";
-import { MessageCircle, Phone } from "lucide-react";
+import { Mail, MessageCircle } from "lucide-react";
 
 export default function CTASection() {
   const { ref, isInView } = useInView();
@@ -52,8 +52,8 @@ export default function CTASection() {
             <motion.a whileHover={{ scale: 1.04, y: -3 }} whileTap={{ scale: 0.97 }} href={COMPANY.whatsapp} target="_blank" rel="noopener noreferrer" className="bg-white text-[#1B3A6B] font-bold uppercase tracking-wider px-6 py-3 rounded-sm font-display text-sm flex items-center gap-2 hover:bg-white/90 hover:shadow-lg transition-all">
               <MessageCircle className="w-5 h-5" /> COTIZAR POR WHATSAPP (B2B)
             </motion.a>
-            <motion.a whileHover={{ scale: 1.04, y: -3 }} whileTap={{ scale: 0.97 }} href={`tel:${COMPANY.phone.replace(/\s/g, "")}`} className="border-2 border-white/40 text-white font-semibold uppercase tracking-wider px-6 py-3 rounded-sm font-display text-sm flex items-center gap-2 hover:bg-white/10 hover:border-white/60 transition-all">
-              <Phone className="w-5 h-5" /> LLAMAR A UN ASESOR COMERCIAL
+            <motion.a whileHover={{ scale: 1.04, y: -3 }} whileTap={{ scale: 0.97 }} href={`mailto:${COMPANY.email}?subject=${encodeURIComponent("Solicitud de cotización")}`} className="border-2 border-white/40 text-white font-semibold uppercase tracking-wider px-6 py-3 rounded-sm font-display text-sm flex items-center gap-2 hover:bg-white/10 hover:border-white/60 transition-all">
+              <Mail className="w-5 h-5" /> COTIZAR POR CORREO
             </motion.a>
           </motion.div>
           <p className="text-white/50 text-xs mt-5">

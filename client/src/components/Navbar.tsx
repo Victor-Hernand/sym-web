@@ -1,16 +1,20 @@
 // DESIGN: Light Premium — Glassmorphism navbar with brand blue accents
 import { COMPANY, IMAGES, NAV_ITEMS } from "@/lib/data";
-import { Phone, Mail, Clock, Menu, X, MessageCircle, Facebook, Instagram } from "lucide-react";
+import { Phone, Mail, Clock, Menu, X, MessageCircle, Facebook, Instagram, ShoppingCart } from "lucide-react";
 import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import TikTokIcon from "@/components/icons/TikTokIcon";
+import QuoteDrawer from "@/components/QuoteDrawer";
+import { useCart } from "@/contexts/CartContext";
 import { useLocation } from "wouter";
 import { goToNavItem } from "@/lib/nav";
 
 export default function Navbar() {
   const [scrolled, setScrolled] = useState(false);
   const [mobileOpen, setMobileOpen] = useState(false);
+  const [quoteOpen, setQuoteOpen] = useState(false);
   const [location, navigate] = useLocation();
+  const { count } = useCart();
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 50);
@@ -22,6 +26,23 @@ export default function Navbar() {
     setMobileOpen(false);
     goToNavItem(href, navigate, location);
   };
+
+  // Botón de lista de cotización con contador; se reutiliza en escritorio y móvil.
+  const cartButton = (
+    <button
+      type="button"
+      onClick={() => setQuoteOpen(true)}
+      aria-label={`Lista de cotización, ${count} ${count === 1 ? "unidad" : "unidades"}`}
+      className="relative w-10 h-10 flex items-center justify-center rounded-sm border border-brand-blue/15 text-brand-blue-light hover:bg-brand-blue hover:border-brand-blue hover:text-white transition-all duration-300"
+    >
+      <ShoppingCart className="w-5 h-5" />
+      {count > 0 && (
+        <span className="absolute -top-1.5 -right-1.5 min-w-5 h-5 px-1 bg-sym-red text-white text-[10px] font-bold rounded-full flex items-center justify-center tabular-nums">
+          {count}
+        </span>
+      )}
+    </button>
+  );
 
   return (
     <>
@@ -96,6 +117,7 @@ export default function Navbar() {
                 <TikTokIcon className="w-4 h-4" />
               </a>
             </div>
+            {cartButton}
             <a
               href={COMPANY.whatsapp}
               target="_blank"
@@ -107,10 +129,18 @@ export default function Navbar() {
             </a>
           </div>
 
-          {/* Mobile toggle */}
-          <button onClick={() => setMobileOpen(!mobileOpen)} className="lg:hidden text-sym-black p-2">
-            {mobileOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
-          </button>
+          {/* Mobile: lista de cotización y menú */}
+          <div className="lg:hidden flex items-center gap-2">
+            {cartButton}
+            <button
+              type="button"
+              onClick={() => setMobileOpen(!mobileOpen)}
+              aria-label={mobileOpen ? "Cerrar menú" : "Abrir menú"}
+              className="text-sym-black p-2"
+            >
+              {mobileOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
+            </button>
+          </div>
         </div>
 
         {/* Brand Blue accent line */}
@@ -177,6 +207,8 @@ export default function Navbar() {
           )}
         </AnimatePresence>
       </header>
+
+      <QuoteDrawer open={quoteOpen} onOpenChange={setQuoteOpen} />
     </>
   );
 }

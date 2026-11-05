@@ -75,7 +75,7 @@ export default function HeroSection() {
               initial={{ opacity: 0, x: -30 }}
               animate={{ opacity: 1, x: 0 }}
               transition={{ delay: 0.6, duration: 0.7 }}
-              className="block w-max mx-auto whitespace-nowrap text-white"
+              className="block mx-auto text-center md:w-max md:whitespace-nowrap text-white"
             >
               Distribución mayorista de
             </motion.span>
@@ -83,7 +83,7 @@ export default function HeroSection() {
               initial={{ opacity: 0, x: 40, filter: "blur(10px)" }}
               animate={{ opacity: 1, x: 0, filter: "blur(0px)" }}
               transition={{ delay: 0.9, duration: 0.9, ease: "easeOut" }}
-              className="hero-blue-gradient block w-max mx-auto whitespace-nowrap drop-shadow-[0_4px_24px_rgba(0,0,0,0.7)]"
+              className="hero-blue-gradient block mx-auto text-center md:w-max md:whitespace-nowrap drop-shadow-[0_4px_24px_rgba(0,0,0,0.7)]"
               style={{ backgroundSize: "200% 200%" }}
             >
               autopartes en Honduras

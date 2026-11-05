@@ -168,43 +168,57 @@ export default function ProductsSection() {
           <h3 className="font-display font-black text-2xl md:text-3xl text-[#1B3A6B] text-center mb-10">
             Líneas destacadas para tu <span className="blue-gradient">negocio automotriz</span>
           </h3>
-          <div className="grid md:grid-cols-3 gap-6">
+          <div className="grid md:grid-cols-3 gap-8 pt-6">
             {FEATURED_PRODUCTS.map((product, i) => (
               <motion.div
                 key={product.name}
                 initial={{ opacity: 0, y: 20 }}
                 animate={isInView ? { opacity: 1, y: 0 } : {}}
                 transition={{ delay: 0.4 + i * 0.15 }}
-                className="bg-white border border-[#1B3A6B]/8 shadow-sm rounded-sm overflow-hidden card-shine group hover:shadow-lg transition-shadow flex flex-col"
+                className="group flex h-full flex-col"
               >
-                <button
-                  type="button"
-                  onClick={() => setFeaturedZoom(i)}
-                  aria-label={`Ampliar imagen de ${product.name} ${product.brand}`}
-                  className="relative aspect-[4/3] overflow-hidden bg-[#1B3A6B]/5 cursor-zoom-in focus:outline-none focus-visible:ring-2 focus-visible:ring-brand-blue-light focus-visible:ring-inset"
-                >
-                  <img src={product.image} alt={product.imageAlt} loading="lazy" className="w-full h-full object-contain p-16 group-hover:scale-105 transition-transform duration-700" />
-                  <span className="absolute top-3 right-3 bg-brand-blue/90 text-white text-xs font-display font-bold px-3 py-1 rounded-sm flex items-center gap-1">
-                    <Star className="w-3 h-3" /> {product.tag}
-                  </span>
-                  <span className="absolute bottom-3 right-3 flex items-center gap-1.5 bg-[#0f0f14]/70 text-white text-[11px] font-display font-bold uppercase tracking-wider px-2.5 py-1.5 rounded-sm opacity-0 group-hover:opacity-100 transition-opacity">
-                    <ZoomIn className="w-3.5 h-3.5" /> Ampliar
-                  </span>
-                </button>
-                <div className="p-6 flex-1 flex flex-col">
-                  <span className="text-brand-blue-light font-display font-bold text-[11px] uppercase tracking-[0.15em] mb-1">{product.brand}</span>
-                  <h4 className="font-display font-bold text-lg text-[#1B3A6B] mb-2">{product.name}</h4>
-                  <p className="text-[#1B3A6B]/55 text-sm leading-relaxed mb-4 flex-1">{product.description}</p>
-                  <a
-                    href={`${COMPANY.whatsapp}?text=${encodeURIComponent(`Hola, me interesa cotizar: ${product.name} ${product.brand}`)}`}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    aria-label={`Cotizar ${product.name} ${product.brand} por WhatsApp`}
-                    className="text-brand-blue-light hover:text-brand-blue font-display font-bold text-xs uppercase tracking-wider inline-flex items-center gap-2 mt-auto group/cta"
-                  >
-                    <MessageCircle className="w-4 h-4" /> Cotizar
-                    <ArrowRight className="w-3.5 h-3.5 group-hover/cta:translate-x-1 transition-transform" />
-                  </a>
+                {/* Tarjeta: la foto sobresale por el borde superior, como en el diseño de referencia */}
+                <div className="relative flex h-full flex-col rounded-xl bg-white shadow-md transition-shadow duration-300 group-hover:shadow-xl">
+                  <div className="relative mx-4 -mt-6 h-52 overflow-hidden rounded-xl bg-gradient-to-br from-[#1B3A6B] to-[#2D5AA0] shadow-lg shadow-brand-blue/35">
+                    <button
+                      type="button"
+                      onClick={() => setFeaturedZoom(i)}
+                      aria-label={`Ampliar imagen de ${product.name} ${product.brand}`}
+                      className="absolute inset-0 h-full w-full cursor-zoom-in focus:outline-none focus-visible:ring-2 focus-visible:ring-inset focus-visible:ring-brand-blue-glow"
+                    >
+                      <img
+                        src={product.image}
+                        alt={product.imageAlt}
+                        loading="lazy"
+                        className="h-full w-full object-contain p-5 transition-transform duration-700 group-hover:scale-105"
+                      />
+                      <span className="absolute bottom-3 right-3 flex items-center gap-1.5 rounded-sm bg-[#0f0f14]/70 px-2.5 py-1.5 text-[11px] font-display font-bold uppercase tracking-wider text-white opacity-0 transition-opacity group-hover:opacity-100">
+                        <ZoomIn className="h-3.5 w-3.5" /> Ampliar
+                      </span>
+                    </button>
+                    <span className="pointer-events-none absolute left-3 top-3 flex items-center gap-1 rounded-sm bg-white px-2.5 py-1 text-[11px] font-display font-bold uppercase tracking-wider text-brand-blue shadow">
+                      <Star className="h-3 w-3" /> {product.tag}
+                    </span>
+                  </div>
+
+                  <div className="flex flex-1 flex-col px-6 pb-2 pt-6">
+                    <span className="mb-1 font-display text-[11px] font-bold uppercase tracking-[0.15em] text-brand-blue-light">{product.brand}</span>
+                    <h4 className="mb-2 font-display text-xl font-bold leading-snug text-[#1B3A6B]">{product.name}</h4>
+                    <p className="flex-1 text-sm leading-relaxed text-[#1B3A6B]/60">{product.description}</p>
+                  </div>
+
+                  <div className="px-6 pb-6 pt-4">
+                    <a
+                      href={`${COMPANY.whatsapp}?text=${encodeURIComponent(`Hola, me interesa cotizar: ${product.name} ${product.brand}`)}`}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      aria-label={`Cotizar ${product.name} ${product.brand} por WhatsApp`}
+                      className="btn-brand flex w-full items-center justify-center gap-2 rounded-lg px-6 py-3 font-display text-xs font-bold uppercase shadow-md shadow-brand-blue/20 transition-all hover:shadow-lg hover:shadow-brand-blue/40"
+                    >
+                      <MessageCircle className="h-4 w-4" /> Cotizar por WhatsApp
+                      <ArrowRight className="h-3.5 w-3.5" />
+                    </a>
+                  </div>
                 </div>
               </motion.div>
             ))}
